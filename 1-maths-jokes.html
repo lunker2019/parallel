@@ -1,0 +1,171 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Parallel Project</title><meta name="description" content="A project to email weekly maths problems and challenges to students."><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="msapplication-tap-highlight" content="no"><link rel="manifest" href="/manifest.json"><link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet"><link href="/styles.css?v2" rel="stylesheet"></head><body><a id="logo" href="/" title="Home"></a><div id="body"><div class="login" v-if="!user"><a class="target" v-on:click="login.toggleDropdown">Login</a><form id="login" v-bind:class="{active: login.showDropdown}" v-on:submit="login.submit"><div class="error" v-show="login.error">{{login.error}}</div><input placeholder="Email" required type="email" v-model="login.email" autocomplete="email"><input placeholder="Password" required type="password" v-model="login.password" autocomplete="current-password"><button type="submit">Login</button></form></div><div class="login" v-if="user"><div class="target">{{user.first}} (<a v-on:click="logout">Logout</a>)</div></div><nav v-if="user"><a href="/" style="background-image: url('/nav/0.png');" title="Home"></a><a href="/1-maths-jokes" style="background-image: url('/nav/1.png');" title="Challenge 1: Maths Jokes"></a><a href="/2-good-will-hunting" style="background-image: url('/nav/2.png');" title="Challenge 2: Good Will Hunting"></a><a href="/3-summaze" style="background-image: url('/nav/3.png');" title="Challenge 3: Summaze" data-show="2017-06-01T00:00:00.000Z"></a><a href="/4-graphs-and-networks" style="background-image: url('/nav/4.png');" title="Challenge 4: Graphs and Networks" data-show="2017-06-08T00:00:00.000Z"></a></nav><div class="container"><div><h1>Parallelogram #01</h1>
+<div style="text-align:center">Noun: parallelogram
+Pronounced: /ˌparəˈlɛləɡram/
+<p><em>Origin: late 16th century: from French parallélogramme, via late Latin from Greek parallēlogrammon, from parallēlos ‘alongside another’ + grammē ‘line’.</em></div></p>
+<ol>
+<li><em>a four-sided plane rectilinear figure with opposite sides parallel.</em></li>
+<li><em>a portmanteau word combining parallel and telegram. A message sent each week by the Parallel Project to bright young mathematicians.</em></li>
+</ol>
+<p>Welcome to the first of four weekly Parallelograms, a collection of mathematical challenges designed to stretch your brain and make your neurons more squiggly.
+You can start and stop whenever you like, but you will need to complete all the challenges by 7pm on Sunday. Then, return to the site one minute later at 7.01pm and you will find your score and a sheet with answers and explanations. Then there will be an online tutorial at 8pm – more information about joining the tutorial appears when you have finished this Parallogram.
+This week’s Parallelogram challenge is in seven parts… some Challenges will have a single theme, while others have sections that shoot off in wildly different directions. In short, these challenges are often going to be a random walk through the mysteries of mathematics. Be prepared to encounter all sorts of weird ideas.</p>
+<ol>
+<li>Maths jokes</li>
+<li>Mini cross-number</li>
+<li>Maryam’s inspiration</li>
+<li>Domino toppling</li>
+<li>Junior Maths Challenge question</li>
+<li>Bloodhound &amp; the world speed record</li>
+<li>Weird optical illusions</li>
+</ol>
+<p>IMPORTANT – you will get points for every correct answer (or nearly correct answer).<br>
+IMPORTANT – some questions have a hint (sometimes two hints). Please think hard and try hard before resorting to the hint. The hints will help you get the right answer, but you will lose marks.<br>
+IMPORTANT – it does not really matter what you score get, the main thing is that you think hard about the problems...and then learn where you went wrong when the answer sheet appears.</p>
+<h2>1. Maths jokes</h2>
+<p>It sounds odd, but there are maths jokes. Lots of jokes. In fact, lots of mathematicians are very funny. Some of my favourite comedians (Dara O'Briain, Romesh Ranganathan and Dave Gorman) studied maths at university, and I have written a whole book about the mathematicians who write The Simpsons.<br>
+So, how good is your mathematical sense of humour? And how much maths do you know? Below are 4 jokes with 3 punchlines each. Can you spot the punchline? You will need to a bit of maths in order to work out the right answer.</p>
+<p><strong>1.1. Why is 6 afraid of 7?</strong><br>
+(a) Because 1, 2, 3<br>
+(b) Because 7, 8, 9<br>
+(c) Because 5 predates 6<br>
+Answer: <select v-model="answers.q_1_1"><option>A</option><option>B</option><option>C</option></select></p>
+<p><strong>1.2 What are the 10 kinds of people in the world?</strong><br>
+(a) Set 0, Set 1, Set 2, … Set 9<br>
+(b) α, β, γ, δ, ε, ζ, η, θ, ι, κ<br>
+(c) Those who understand binary, and those who don’t<br>
+Answer: <select v-model="answers.q_1_2"><option>A</option><option>B</option><option>C</option></select></p>
+<p><strong>1.3 What does the “B” in Benoit B Mandelbrot stand for?</strong><br>
+(a) Benoit B Mandelbrot<br>
+(b) Binomial<br>
+(c) Breviation<br>
+Answer: <select v-model="answers.q_1_3"><option>A</option><option>B</option><option>C</option></select></p>
+<p><strong>1.4 Why did the chicken cross the Möbius strip?</strong><br>
+(a) To get to the other…. er…?<br>
+(b) To reach a finite conclusion<br>
+(c) To integrate itself into the tarmac<br>
+Answer: <select v-model="answers.q_1_4"><option>A</option><option>B</option><option>C</option></select></p>
+<h2>2. Mini cross-number</h2>
+<p><strong>2.1. What is the digit x in this cross-number?</strong></p>
+<p><img src="/images/crossnumber.png" alt=""></p>
+<p><strong>Across</strong></p>
+<ol>
+<li>A cube</li>
+<li>A cube</li>
+</ol>
+<p><strong>Down</strong></p>
+<ol>
+<li>One less than a cube</li>
+<li>A number</li>
+</ol>
+<p>x = <input type="number" v-model="answers.q_2_1"/></p>
+<div class="hint" data-id="hint-1"><div class="hint-body"><h3>HINT 1</h3><p>1 across, 3 across &amp; 1 down are all cubes (or one less than a cube) and they are all 2-digit numbers, which means they are between 10 and 99. There are not very many cube numbers between 10 and 99, so start by writing them down and then see how they might fit into the grid.</p>
+</div></div><h2>3. Maryam’s inspiration</h2>
+<p><img src="/images/maryam-mirzakhani.png" alt=""></p>
+<p>You might be surprised to know that there is no Nobel Prize for maths. However, there is an even bigger prize for mathematicians, which is called the Fields Medal. It is only given every 4 years, so it is very rare and precious.<br>
+In 2014, Maryam Mirzakhani became the first woman to win a Fields Medal. She was born in Iran and now works in America, and you can find out about life and work in the short video below.<br>
+Not surprisingly, Maryam talks about some incredibly complex maths, so don’t worry if you find it confusing. In fact, if you think you understand what Maryam is describing, then you probably don’t. Watch it carefully and answer the question below.</p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/4GhbMhQLQ_g" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
+<p><strong>3.1 What indoor sport does Maryam mention in one of her mathematical examples?</strong><br>
+(a) Chess<br>
+(b) Darts<br>
+(c) Billiards<br>
+(d) Table tennis<br>
+Answer: <select v-model="answers.q_3_1"><option>A</option><option>B</option><option>C</option><option>D</option></select></p>
+<p>Maryam has said that she first became fired up about mathematics when her big brother told her a story about the great mathematician Carl Friedrich Gauss. When Gauss was a schoolboy, his teacher tried to keep the class busy by asking them to add up all the numbers from 1 to 100. I suspect that he wanted to nip out for a 15-minute nap.</p>
+<p><img src="/images/gauss.png" alt=""></p>
+<p>However, before the teacher had even left the room, Gauss’s hand shot up and he announced that the answer was 5,050.</p>
+<p>Gauss was right, but how did he add up the first 100 numbers in just a few seconds?</p>
+<p>Here is Gauss's trick in three stages:</p>
+<ol>
+<li>
+<p>Pair up all the numbers in the following way and add them up:</p>
+<p>1 + 100 = 101,<br>
+2 + 99 = 101,<br>
+3 + 98 = 101<br>
+…<br>
+50 + 51 = 101</p>
+</li>
+<li>
+<p>So, you have 50 pairs of numbers, which all add up to 101.</p>
+</li>
+<li>
+<p>So, the result is 50 x 101 = 5,050!</p>
+</li>
+</ol>
+<p>Another way to think about this is:</p>
+<p><img src="/images/sum-equation.png" alt=""></p>
+<ul>
+<li><strong>(n+1)</strong> represents step 1, because you pair up all the numbers, so that all the pairs add up to <strong>(n+1)</strong>.</li>
+<li><strong>(n/2)</strong> represents step 2, because the number of pairs is equal to the total number of numbers divided by 2.</li>
+<li><strong>(x)</strong> represents step 3, because you then multiply the sum of each pair by the number of pairs.</li>
+</ul>
+<p>Let’s see if you can apply Gauss’s trick.</p>
+<p><strong>3.2 Add up all the numbers from 1 to 50</strong><br>
+Answer: <input type="number" v-model="answers.q_3_2"></input></p>
+<p><strong>3.3 Add up all the numbers from 1 to 1,000</strong><br>
+Answer: <input type="number" v-model="answers.q_3_3"></input></p>
+<h2>4. Domino toppling</h2>
+<p>I watched this terrific video last week. Take a look and answer the question afterwards.</p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/5JCm5FY-dEY" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
+<p><strong>4.1 Starting with 5mm tall domino, how many dominoes would you need to knock down the Empire State Building?</strong><br>
+(a) 30<br>
+(b) 100<br>
+(c) 30,000<br>
+(d) 100,000,000<br>
+Answer: <select v-model="answers.q_4_1"><option>A</option><option>B</option><option>C</option><option>D</option></select></p>
+<p>Each domino can knock over a domino that 1.5 times bigger, which does not seem big, but it this happens over and over again then the dominoes get bigger and bigger very quickly. This is known as exponential growth and we will return to this in a future Parallelogram.
+In the meantime, here is an even more extraordinary example of domino toppling where the dominos get bigger and bigger. In fact, it was a world record at the time.</p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/8yYWILv91YU&amp;t=2m56s" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
+<h2>5. Junior Maths Challenge question</h2>
+<p><em>(This question is taken from JMC 2017, question 13.)</em></p>
+<p><strong>5.1. Consider the following three statements.</strong></p>
+<p>(i) Doubling a positive number always makes it larger.<br>
+(ii) Squaring a positive number always makes it larger.<br>
+(iii) Taking the positive square root of a positive number always makes it smaller.</p>
+<p>Which of the above statements are true?</p>
+<p>(A) All three<br>
+(B) None<br>
+(C) Only (i)<br>
+(D) (i) and (ii)<br>
+(E) (ii) and (iii)<br>
+Answer: <select v-model="answers.q_5_1"><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select></p>
+<h2>6. Weird optical illusions</h2>
+<p>The amazing, mind-warping objects in this video have been created by mathematical artist and engineer Professor Kokichi Sugihara. These incredible illusions literally mess with your brain.<br>
+Sometimes the geometry that you study at school might seem ordinary – what could be more ordinary than the angles of a triangle or the symmetry of a square? – but your teachers are providing you with the first stepping stones towards gaining an understanding the nature of space, and how you can build the sort of blabberghasting structures in this video. There is one question afterwards and then you can hit the submit button and your first Parallelogram has been completed.</p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/Wx4yi5m8IfI" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
+<p><strong>6.1 Professor Sugihara’s work could help:</strong><br>
+(a) Drivers<br>
+(b) Architects<br>
+(c) Surgeons<br>
+Answer: <select v-model="answers.q_6_1"><option>A</option><option>B</option><option>C</option></select></p>
+<h2>Feedback</h2>
+<p>Before you can finish your Parallelogram, you need to take 30 seconds to answer a few questions that will tell us what you thought about this week’s challenges.</p>
+<div style="text-align:center">
+<p>How difficult was this Parallelogram?<br>
+<select v-model="feedback.difficulty"><option>Very Easy</option><option>Quite Easy</option><option>OK</option><option>Quite Difficult</option><option>Very Difficult</option></select></p>
+<p>How long was this Parallelogram?<br>
+<select v-model="feedback.length"><option>Very Short</option><option>A Bit Short</option><option>OK</option><option>A Bit Long</option><option>Very Long</option></select></p>
+<p>How much fun was this Parallelogram?<br>
+<select v-model="feedback.fun"><option>Very Horrible</option><option>A Bit Horrible</option><option>OK</option><option>Quite Fun</option><option>Very Fun</option></select></p>
+<p>How interesting was this Parallelogram?<br>
+<select v-model="feedback.interest"><option>Very Boring</option><option>A Bit Boring</option><option>OK</option><option>A Bit Interesting</option><option>Very Interesting</option></select></p>
+</div>
+<h2>Further Interest</h2>
+<p>You can read more about mathematician Maryam Mirzakhani in <a href="https://www.theguardian.com/science/2014/aug/13/interview-maryam-mirzakhani-fields-medal-winner-mathematician">this interview published in the Guardian</a>: 'The more I spent time on maths, the more excited I got'.</p>
+<p><a href="http://www.telegraph.co.uk/news/science/11029161/The-Fields-Medal-is-the-greatest-prize-in-maths.html">This article from the Telegraph newspaper</a> provides some history about the Fields Medal, the biggest prize in mathematics.</p>
+<p><a href="https://betterexplained.com/articles/techniques-for-adding-the-numbers-1-to-100/">This website</a> goes into more detail about ways of adding the numbers from 1 to 100, and is worth looking at.</p>
+<p>Don’t forget, your score and answers will be available <a href="www.parallelogram.org.uk/Sunday-answers-and-score">here</a> from 7.31 on Sunday.</p>
+</div><div id="submit"><button>Submit your Answers</button></div></div></div><footer><a href="http://goodthinkingsociety.org" target="_blank">Good Thinking Society</a>•<a href="/terms-and-conditions">Terms and Conditions</a></footer><script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script><script>firebase.initializeApp({
+  apiKey: "AIzaSyCrQ_PdH-05lcNWETGvGfiwO3MBXk_WeVU",
+  authDomain: "parallel-cf800.firebaseapp.com",
+  databaseURL: "https://parallel-cf800.firebaseio.com",
+  projectId: "parallel-cf800",
+  storageBucket: "parallel-cf800.appspot.com",
+  messagingSenderId: "610680271345"
+});
+</script><script defer src="https://unpkg.com/vue"></script><script defer src="/scripts.js?v2"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q || []).push(arguments)},i[r].l=1 * new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37525836-7', 'auto');
+ga('send', 'pageview');</script></body></html>
