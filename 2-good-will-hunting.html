@@ -1,11 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Parallel Project</title><meta name="description" content="A project to email weekly maths problems and challenges to students."><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="msapplication-tap-highlight" content="no"><link rel="manifest" href="/manifest.json"><link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet"><link href="/styles.css?v2" rel="stylesheet"></head><body><a id="logo" href="/" title="Home"></a><div id="body"><div class="login" v-if="!user"><a class="target" v-on:click="login.toggleDropdown">Login</a><form id="login" v-bind:class="{active: login.showDropdown}" v-on:submit="login.submit"><div class="error" v-show="login.error">{{login.error}}</div><input placeholder="Email" required type="email" v-model="login.email" autocomplete="email"><input placeholder="Password" required type="password" v-model="login.password" autocomplete="current-password"><button type="submit">Login</button><p><a href="/contact">I've forgotten my email address or password</a></p></form></div><div class="login" v-if="user"><div class="target">{{user.first}} (<a v-on:click="logout">Logout</a>)</div></div><nav v-if="user"></nav><div class="container"><div><h1>Parallelogram #02</h1>
-<div style="text-align:center">Noun: parallelogram
-Pronounced: /ˌparəˈlɛləɡram/
-<p><em>Origin: late 16th century: from French parallélogramme, via late Latin from Greek parallēlogrammon, from parallēlos ‘alongside another’ + grammē ‘line’.</em></div></p>
-<ol>
-<li><em>a four-sided plane rectilinear figure with opposite sides parallel.</em></li>
-<li><em>a portmanteau word combining parallel and telegram. A message sent each week by the Parallel Project to bright young mathematicians.</em></li>
-</ol>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Parallel Project</title><meta name="description" content="A project to email weekly maths problems and challenges to students."><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="msapplication-tap-highlight" content="no"><link rel="manifest" href="/manifest.json"><link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet"><link href="/styles.css?v2" rel="stylesheet"></head><body><a id="logo" href="/" title="Home"></a><div id="body"><div class="login" v-if="!user"><a class="target" v-on:click="login.toggleDropdown">Login</a><form id="login" v-bind:class="{active: login.showDropdown}" v-on:submit="login.submit"><div class="error" v-show="login.error">{{login.error}}</div><input placeholder="Email" required type="email" v-model="login.email" autocomplete="email"><input placeholder="Password" required type="password" v-model="login.password" autocomplete="current-password"><button type="submit">Login</button><p><a href="#">Reset password</a></p></form></div><div class="login" v-if="user"><div class="target">{{user.first}} (<a v-on:click="logout">Logout</a>)</div></div><nav v-if="user"><a href="/" style="background-image: url('/nav/0.png');" title="Home"></a><a href="/1-maths-jokes" style="background-image: url('/nav/1.png');" title="Challenge 1: Maths Jokes"></a><a href="/2-good-will-hunting" style="background-image: url('/nav/2.png');" title="Challenge 2: Good Will Hunting"></a><a href="/3-summaze" style="background-image: url('/nav/3.png');" title="Challenge 3: Summaze"></a><a href="/4-graphs-and-networks" style="background-image: url('/nav/4.png');" title="Challenge 4: Graphs and Networks"></a></nav><div class="container"><div><h1>Parallelogram #2</h1>
 <p>Welcome to the second of four weekly Parallelograms, a collection of mathematical challenges designed to stretch your brain and make your neurons more squiggly. You can start and stop whenever you like, but you will need to complete all the challenges by 7pm on Sunday. Then, return to the site one minute later at 7.01pm and you will find your score and a sheet with answers and explanations. This week’s Parallelogram challenge is in seven parts. Be prepared to encounter all sorts of weird ideas.</p>
 <ol>
 <li>The Good Will Hunting Problem</li>
@@ -14,81 +7,73 @@ Pronounced: /ˌparəˈlɛləɡram/
 <li>When not knowing Math can cost you $15,000</li>
 <li>Junior Maths Challenge question</li>
 </ol>
-<p><strong>IMPORTANT</strong> – <em>you will get points for every correct answer (or nearly correct answer).</em><br>
-<strong>IMPORTANT</strong> – <em>some questions have a hint (sometimes two hints). Please think hard and try hard before resorting to the hint. The hints will help you get the right answer, but you will lose marks.</em><br>
-<strong>IMPORTANT</strong> – <em>it does not really matter what you score get, the main thing is that you think hard about the problems...and then learn where you went wrong when the answer sheet appears.</em></p>
-<hr>
 <h2>1. The Good Will Hunting Problem</h2>
 <img src="/images/challenges/2/good-will-hunting.jpg" style="float: right; margin-left: 1rem"/>
-“Good Will Hunting” is a 1997 film that won two Oscars and made Matt Damon and
-Ben Affleck famous, as they starred in and wrote the film. It tells the story of
-a janitor called Will Hunting, who keeps the floors clean and the lecture
-theatres tidy at the Massachusetts Institute of Technology (MIT), one of world’s best universities. However, unknown to the
-professors, Will is a mathematical genius, and the film tells the story of his
-battle to come to terms with his remarkable talent for numbers and his struggle
-to understand his relationship with his best friend, his girlfriend and himself.
-Along the way, he is helped by a psychologist played by Robin Williams, who
-appears in the film’s poster next to Matt Damon.
-<p>Take a look at this clip, which starts with a maths professor confronting his
-students, because someone has solved one his problems and yet he doesn’t know
-who – of course, we know who solved the problem.</p>
+<p>“Good Will Hunting” is a 1997 film that won two Oscars and made Matt Damon and Ben Affleck famous, as they starred in and wrote the film. It tells the story of a janitor called Will Hunting, who keeps the floors clean and the lecture theatres tidy at the Massachusetts Institute of Technology (MIT), one of world’s best universities. However, unknown to the professors, Will is a mathematical genius, and the film tells the story of his battle to come to terms with his remarkable talent for numbers and his struggle to understand his relationship with his best friend, his girlfriend and himself. Along the way, he is helped by a psychologist played by Robin Williams, who appears in the film’s poster next to Matt Damon.</p>
+<p>Take a look at this clip, which starts with a maths professor confronting his students, because someone has solved one his problems and yet he doesn’t know who – of course, we know who solved the problem.</p>
 <p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/Ta3sClUQmfM" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
 <p>Although the problem that Will is working on is said to be incredibly difficult, that is just a bit of Hollywood exaggeration, because this is a problem that you – <strong>yes, you!</strong> – might be able to solve.</p>
-<p>This is the problem: <strong>draw all homeomorphically irreducible trees of size
-<em>n</em> = 10.</strong></p>
+<p>This is the problem: <strong>draw all homeomorphically irreducible trees of size <em>n</em> = 10.</strong></p>
 <p>First, don’t panic! Don’t be scared by the scary words. It is not as terrifying as it sounds. Let me translate what it means into terms that you will understand.</p>
-<p>In maths, trees are dots connected by lines, but the lines cannot form loops. Also, the question requires that a
-tree is not allowed to have a dot connected to only two lines, because the dot
-could be removed and it would not look very different.</p>
+<p>In maths, trees are dots connected by lines, but the lines cannot form loops. Also, the question requires that a tree is not allowed to have a dot connected to only two lines, because the dot could be removed and it would not look very different.</p>
 <p>We can show the rules as they apply to drawing trees with 5 dots.</p>
-<p>Tree (a) is not allowed, because the red dot has only two lines, one going in
-and one going out. That is just waste of a dot.</p>
+<p>Tree (a) is not allowed, because the red dot has only two lines, one going in and one going out. That is just waste of a dot.</p>
 <p>Tree (b) is not allowed because it has a loop. Remember, no loops.</p>
 <p><img src="/images/challenges/2/graph-1.png" alt=""></p>
-<p>In fact, the only tree that you can make with 5 dots is this one. No loops. No
-dots with just two lines.</p>
+<p>In fact, the only tree that you can make with 5 dots is this one. No loops. No dots with just two lines.</p>
 <p><img src="/images/challenges/2/graph-2.png" alt=""></p>
-<p>The only other thing you need to know about trees is that all of the 5-dot
-trees below are considered to be the same. They are copycat trees because they
-can be bent, stretched, twisted and flipped, so that they look the 5-dot tree
-above. That is why we say there is only one 5-dot tree. One way to see that
-they are all the same tree is to note that each tree consists of <strong>one dot with
-four lines</strong> and <strong>four dots with only one line</strong>.</p>
+<p>The only other thing you need to know about trees is that all of the 5-dot trees below are considered to be the same. They are copycat trees because they can be bent, stretched, twisted and flipped, so that they look the 5-dot tree above. That is why we say there is only one 5-dot tree. One way to see that they are all the same tree is to note that each tree consists of <strong>one dot with four lines</strong> and <strong>four dots with only one line</strong>.</p>
 <p><img src="/images/challenges/2/graph-3.png" alt=""></p>
-<p>Now it’s time to see if you have understood the maths of trees.<br>
-For 6 dots there are only two irreducible trees. From the diagrams below, which are the two allowable trees?</p>
-<p><img src="/images/challenges/2/graph-4.png" alt=""></p>
-<p><strong>1.1. The first allowable tree is...</strong></p>
-<p>Answer: <select v-model="answers.q_1_4"><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select><br>
-<em>[1 mark]</em></p>
-<p><strong>1.2. The second allowable tree is...</strong></p>
-<p>Answer: <select v-model="answers.q_1_4"><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select><br>
-<em>[1 mark]</em></p>
-<p>Hopefully, you are now getting the idea, but before we get to the full Good Will Hunting problem, here are three warm ups.
-You will need to get a piece of paper and start drawing some trees.
-The key things are don’t create forbidden trees and don’t create copycat trees.
-Copycat trees are hard to sometimes spot, so really twist and turn you trees to check that one of them cannot be transformed into another.</p>
-<p><strong>1.3.</strong> Draw all homeomorphically irreducible trees of with 7 dots. How many did you find? Hint: the answer is 1, 2, 3, 4  or 5.<br>
-<input type="number" data-id="s1-q7"/><br>
-<em>[1 mark]</em></p>
-<p><strong>1.4.</strong> For 8 dots, there are 4 distinct trees. Here are 5 trees, so two of them must be essentially the same. Which tree can be twisted and reshaped into another tree? Which tree should be removed? Obviously, there are two possible answers, because you could remove either member of the pair.<br>
-<img src="/images/challenges/2/graph-5.png" alt=""><br>
-Answer: <select v-model="answers.q_1_4"><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select><br>
-<em>[1 mark]</em></p>
-<p><strong>1.5.</strong> For 9 dots, there are 5 distinct trees. Here are 6 trees, so two of them must be essentially the same. Which tree can be twisted and reshaped into another tree? Which tree should be removed? Obviously, there are two possible answers, because you could remove either member of the pair.<br>
-<img src="/images/challenges/2/graph-6.png" alt=""><br>
-Answer: <select v-model="answers.q_1_4"><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option></select><br>
-<em>[1 mark]</em></p>
+<p>Now it’s time to see if you have understood the maths of trees.</p>
+<div class="problem">
+<div class="marks">1 mark</div>
+<p><strong>1.1 For 6 dots there are only two irreducible trees. Which of these are they?</strong></p>
+<div class="choice checkbox c3">
+  <div v-on:click="setAnswer('p_1_1a', !answers.p_1_1a)" v-bind:class="{active: answers.p_1_1a}"><img src="/images/challenges/2/graph-4a.png"/></div>
+  <div v-on:click="setAnswer('p_1_1b', !answers.p_1_1b)" v-bind:class="{active: answers.p_1_1b}"><img src="/images/challenges/2/graph-4b.png"/></div>
+  <div v-on:click="setAnswer('p_1_1c', !answers.p_1_1c)" v-bind:class="{active: answers.p_1_1c}"><img src="/images/challenges/2/graph-4c.png"/></div>
+  <div v-on:click="setAnswer('p_1_1d', !answers.p_1_1d)" v-bind:class="{active: answers.p_1_1d}"><img src="/images/challenges/2/graph-4d.png"/></div>
+  <div v-on:click="setAnswer('p_1_1e', !answers.p_1_1e)" v-bind:class="{active: answers.p_1_1e}"><img src="/images/challenges/2/graph-4e.png"/></div>
+</div>
+</div>
+<p>Hopefully, you are now getting the idea, but before we get to the full Good Will Hunting problem, here are three warm ups.</p>
+<p>You will need to get a piece of paper and start drawing some trees. The key things are don’t create forbidden trees and don’t create copycat trees. Copycat trees are hard to sometimes spot, so really twist and turn you trees to check that one of them cannot be transformed into another.</p>
+<div class="problem">
+<div class="marks">1 mark</div>
+<p><strong>1.2</strong> Draw all homeomorphically irreducible trees of with 7 dots. How many did you find?</p>
+<div class="choice radio c5">
+  <div v-on:click="setAnswer('p_1_2', 'a')" v-bind:class="{active: answers.p_1_2 == 'a'}">1</div>
+  <div v-on:click="setAnswer('p_1_2', 'b')" v-bind:class="{active: answers.p_1_2 == 'b'}">2</div>
+  <div v-on:click="setAnswer('p_1_2', 'c')" v-bind:class="{active: answers.p_1_2 == 'c'}">3</div>
+  <div v-on:click="setAnswer('p_1_2', 'd')" v-bind:class="{active: answers.p_1_2 == 'd'}">4</div>
+  <div v-on:click="setAnswer('p_1_2', 'e')" v-bind:class="{active: answers.p_1_2 == 'e'}">5</div>
+</div>
+<div class="marks">1 mark</div>
+<p><strong>1.3</strong> For 8 dots, there are 4 distinct trees. Here are 5 trees, so two of them must be essentially the same. Which tree can be twisted and reshaped into another tree? Which tree should be removed? Obviously, there are two possible answers, because you could remove either member of the pair.</p>
+<div class="choice checkbox c3">
+  <div v-on:click="setAnswer('p_1_1a', !answers.p_1_1a)" v-bind:class="{active: answers.p_1_1a}"><img src="/images/challenges/2/graph-5a.png"/></div>
+  <div v-on:click="setAnswer('p_1_1b', !answers.p_1_1b)" v-bind:class="{active: answers.p_1_1b}"><img src="/images/challenges/2/graph-5b.png"/></div>
+  <div v-on:click="setAnswer('p_1_1c', !answers.p_1_1c)" v-bind:class="{active: answers.p_1_1c}"><img src="/images/challenges/2/graph-5c.png"/></div>
+  <div v-on:click="setAnswer('p_1_1d', !answers.p_1_1d)" v-bind:class="{active: answers.p_1_1d}"><img src="/images/challenges/2/graph-5d.png"/></div>
+  <div v-on:click="setAnswer('p_1_1e', !answers.p_1_1e)" v-bind:class="{active: answers.p_1_1e}"><img src="/images/challenges/2/graph-5e.png"/></div>
+</div>
+<div class="marks">1 mark</div>
+<p><strong>1.4</strong> For 9 dots, there are 5 distinct trees. Here are 6 trees, so two of them must be essentially the same. Which tree can be twisted and reshaped into another tree? Which tree should be removed? Obviously, there are two possible answers, because you could remove either member of the pair.<br>
+<img src="/images/challenges/2/graph-6.png" alt=""></p>
+<p><select v-model="answers.q_1_4"><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option></select></p>
+</div>
 <p>Now you are ready for the full Will Hunting problem.</p>
-<p><strong>1.6.</strong> Draw all homeomorphically irreducible trees of with 10 dots. How many did you find? Take your time. Check you haven’t missed any trees. Chess that you have not drawn the same tree twice. Clue: the number of trees is more than 5 and less than 14.<br>
-<input type="number" min="5" max="14" data-id="s1-q7"/><br>
-<em>[3 marks]</em></p>
+<div class="problem">
+<div class="marks">3 marks</div>
+<p><strong>1.6.</strong> Draw all homeomorphically irreducible trees of with 10 dots. How many did you find?</p>
+<p>Take your time. Check you haven’t missed any trees. Check that you have not drawn the same tree twice. The correct answer is between 5 and 14.</p>
+<input type="number" min="5" max="14" data-id="s1-q7"/>  
+</div>
 <p>The Good Will Hunting problem is not incredibly difficult, despite what the
 film implies. However, you have just been learning some maths that you would
 not normally do until A level. So, well done. Don’t worry if you did not
 understand everything about trees, but if you did get most of the answers right
 then double well done.</p>
-<hr>
 <h2>2. NASA’s massive blackboard photograph</h2>
 <p>This week I can across two terrific photographs of NASA mathematicians writing
 down some mathematics on their giant blackboards. The boards were used for
@@ -116,14 +101,17 @@ removed, and a still from the movie.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>2.1.</strong> What is the title of the film that celebrates the role of the pioneering women mathematicians at NASA in the 1960s? (If you don’t know the answer, then you should be able to find it with some help from Google.)<br>
-(a) Apollo’s Angels<br>
-(b) Hidden Figures<br>
-(c) Rocket Women<br>
-(d) Invisible Chalk<br>
-(e) The Forgotten Mathematicians<br>
-Answer: <select v-model="answers.q_1_4"><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select></p>
-<hr>
+<div class="problem">
+<div class="marks">1/2 mark</div>
+<p><strong>2.1.</strong> What is the title of the film that celebrates the role of the pioneering women mathematicians at NASA in the 1960s? (If you don’t know the answer, then you should be able to find it with some help from Google.)</p>
+<div class="choice radio">
+  <div v-on:click="setAnswer('p_2_1', 'a')" v-bind:class="{active: answers.p_2_1 == 'a'}">(a) Apollo’s Angels</div>
+  <div v-on:click="setAnswer('p_2_1', 'b')" v-bind:class="{active: answers.p_2_1 == 'b'}">(b) Hidden Figures</div>
+  <div v-on:click="setAnswer('p_2_1', 'c')" v-bind:class="{active: answers.p_2_1 == 'c'}">(c) Rocket Women</div>
+  <div v-on:click="setAnswer('p_2_1', 'd')" v-bind:class="{active: answers.p_2_1 == 'd'}">(d) Invisible Chalk</div>
+  <div v-on:click="setAnswer('p_2_1', 'e')" v-bind:class="{active: answers.p_2_1 == 'e'}">(e) The Forgotten Mathematicians</div>
+</div>
+</div>
 <h2>3. The Councillor Problem</h2>
 <p>A local councillor is knocking on doors. He is carrying out a survey, because
 he is wondering whether the community needs a new school.</p>
@@ -142,9 +130,11 @@ what their ages are so he asks for a final clue, and the mum agrees.</p>
 <p><strong>CLUE 3: The lady then explains that her eldest child plays chess.</strong></p>
 <p>Straightaway he knows their ages, says thank you and moves on to the next house
 (hoping that the next parent will be more straightforward).</p>
-<p><strong>3.1.</strong> How old is the oldest child?<br>
-<input type="number" data-id="s3-q1"/><br>
-<em>[4 marks]</em></p>
+<div class="problem">
+<div class="marks">4 marks</div>
+<p><strong>3.1.</strong> How old is the oldest child?</p>
+<input type="number" data-id="s3-q1"/>  
+</div>
 <p>If you can work out the answers then go for it. If you are a bit stuck, then … keep trying. I promise
 that you are smart enough to work out the correct ages of the children, and therefore the age of the
 oldest child. If you are still stuck after a few minutes of effort, then there are some hints below.
@@ -152,48 +142,91 @@ There are 4 marks for this question, but you will lose 1 mark for each clue that
 <div class="hint" data-id="hint-1"><div class="hint-body"><h3>HINT 1</h3><p>Start by creating a list of all the possible ages for the three children, bearing in mind that we know that the ages multiply to give 36. If you are doing this on your own then try to do it in an order so that you can make sure that you have not missed out any possibilities. Luckily, I have given you a table (with some gaps) that show that there are 8 possibilities. Copy the table onto a piece of paper and fill in the gaps.
 Once you have identified all the possibilities, go back and look at clues 2 and 3 that the mathematical mum gave and see if you can work out the ages of the children, and therefore the age of the oldest child.
 If you are still stuck … then try harder … but you also try hint 2.</p>
-<p>1	x	1	x	36	= 36
-1	x	2	x	18	= 36
-1	x	3	x	12	= 36
-1	x	4	x	9	= 36
-1	x	6	x	6	= 36
-2	x	2	x	9	= 36
-2	x	?	x	?	= 36
-3	x	?	x	?	= 36</p>
+<table>
+<tbody>
+<tr>
+<td>1 x 1 x 36 = 36</td>
+</tr>
+<tr>
+<td>1 x 2 x 18 = 36</td>
+</tr>
+<tr>
+<td>1 x 3 x 12 = 36</td>
+</tr>
+<tr>
+<td>1 x 4 x 9 = 36</td>
+</tr>
+<tr>
+<td>1 x 6 x 6 = 36</td>
+</tr>
+<tr>
+<td>2 x 2 x 9 = 36</td>
+</tr>
+<tr>
+<td>2 x ? x ? = 36</td>
+</tr>
+<tr>
+<td>3 x ? x ? = 36</td>
+</tr>
+</tbody>
+</table>
 </div></div><div class="hint" data-id="hint-2"><div class="hint-body"><h3>HINT 2</h3><p>The ages add up to the house number, but that is still not enough for the councillor to work out the ages. This must mean that at least a couple of the possible sets of ages add up to the same number, which explains why the councillor is still confused. Which pair of possibilities add up to the same number?
 Once you have narrowed it down to a pair of possibilities, then take a look at final clue that the mother gave.</p>
-<p>1	+	1	+	36	= 38
-1	+	2	+	18	= 21
-1	+	3	+	12	= ?
-1	+	4	+	9	= ?
-1	+	6	+	6	= ?
-2	+	2	+	9	= ?
-2	+	3	+	6	= ?
-3	+	3	+	4	= ?</p>
+<table>
+<tbody>
+<tr>
+<td>1 + 1 + 36 = 38</td>
+</tr>
+<tr>
+<td>1 + 2 + 18 = 21</td>
+</tr>
+<tr>
+<td>1 + 3 + 12 = ?</td>
+</tr>
+<tr>
+<td>1 + 4 + 9 = ?</td>
+</tr>
+<tr>
+<td>1 + 6 + 6 = ?</td>
+</tr>
+<tr>
+<td>2 + 2 + 9 = ?</td>
+</tr>
+<tr>
+<td>2 + 3 + 6 = ?</td>
+</tr>
+<tr>
+<td>3 + 3 + 4 = ?</td>
+</tr>
+</tbody>
+</table>
 </div></div><div class="hint" data-id="hint-3"><div class="hint-body"><h3>HINT 3</h3><p>It’s obvious. Think about it.</p>
 </div></div><div class="hint" data-id="hint-4"><div class="hint-body"><h3>HINT 4</h3><p>You should have narrowed it down to two possibilities (1, 6, 6) an (2, 2, 9), which both add up to 13. Only one of these sets of ages has an oldest children (2, 2, 9),  has a pair of eldest children. So the answer is obvious.</p>
-</div></div><hr>
-<h2>4. When not knowing Math can cost you $15,000</h2>
+</div></div><h2>4. When not knowing Math can cost you $15,000</h2>
 <p>This clip from the TV quiz show Who Wants to be a Millionaire? shows just one reason why it’s a good idea to be a confident mathematician.</p>
 <p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/BbX44YSsQ2I" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
-<hr>
 <h2>5. Junior Maths Challenge Question</h2>
+<div class="problem">
+<div class="marks">1 mark</div>
+<p><strong>5.1. What is the value of x?</strong>
+<img src="/images/challenges/2/maths-challenge-angle-question.png" alt=""></p>
+<div class="choice radio c5">
+  <div v-on:click="setAnswer('p_5_1', 'a')" v-bind:class="{active: answers.p_5_1 == 'a'}">(a) 43</div>
+  <div v-on:click="setAnswer('p_5_1', 'b')" v-bind:class="{active: answers.p_5_1 == 'b'}">(b) 47</div>
+  <div v-on:click="setAnswer('p_5_1', 'c')" v-bind:class="{active: answers.p_5_1 == 'c'}">(c) 53</div>
+  <div v-on:click="setAnswer('p_5_1', 'd')" v-bind:class="{active: answers.p_5_1 == 'd'}">(d) 57</div>
+  <div v-on:click="setAnswer('p_5_1', 'e')" v-bind:class="{active: answers.p_5_1 == 'e'}">(e) 67</div>
+</div>
 <p><em>(This question is taken from the Junior Maths Challenge 2017)</em></p>
-<p><strong>5.1.</strong> What is the value of x?<br>
-<img src="/images/challenges/2/maths-challenge-angle-question.png" alt=""><br>
-Answer: <input type="number" data-id="s3-q1"/><br>
-<em>[1 mark]</em></p>
-<hr>
+</div>
 <p>That’s all for this week. Don’t forget to come back at 7.01pm on Sunday to find out your score and to obtain the answer sheet. And don’t worry if you didn’t get it all right (or even half right), because this is not an exam and I am not trying to give you questions that you can do, but rather I am trying to give you question that might be able to do.</p>
 <p>Cheerio,</p>
 <p>Simon.</p>
-<hr>
 <h2>Further Interest</h2>
 <p>If you want to find out more about <strong>Good Will Hunting</strong>, then just Google it. There are tons of articles about one of the greatest films to come out of Hollywood. You should certainly watch it, but it is aimed at an older audience, so perhaps wait until you are a bit older.</p>
 <p>Number nerd James Grime has made an interesting video asking <a href="https://www.youtube.com/watch?v=SzjdcPbjaR4">“Who was the real Good Will Hunting?”</a></p>
 <p>More about NASA blackboard photos <a href="http://rarehistoricalphotos.com/nasa-scientists-board-calculations-1961/">here</a>.</p>
-<hr>
-</div><h3>Feedback & Submit Answers</h3><p>Before you can finish your Parallelogram, you need to take 30 seconds to answer a few questions that will tell us what you thought about this week’s challenges.</p><form v-on:submit="answers.submit"><label>How difficult was this Parallelogram?<select v-model="feedback.difficulty" required><option>Very Easy</option><option>A Bit Easy</option><option>Ok</option><option>A Bit Difficult</option><option>Very Difficult</option></select></label><label>How long was this Parallelogram?<select v-model="feedback.length" required><option>Very Short</option><option>A Bit Short</option><option>Ok</option><option>A Bit Long</option><option>Very Long</option></select></label><label>How much fun was this Parallelogram?<select v-model="feedback.fun" required><option>Very Horrible</option><option>A Bit Horrible</option><option>Ok</option><option>A Bit Fun</option><option>Very Fun</option></select></label><label>How interesting was this Parallelogram?<select v-model="feedback.interest" required><option>Very Boring</option><option>A Bit Boring</option><option>Ok</option><option>A Bit Interesting</option><option>Very Interesting</option></select><button type="submit">Submit Answers</button></label></form></div></div><footer><a href="http://goodthinkingsociety.org" target="_blank">Good Thinking Society</a>•<a href="/terms-and-conditions">Terms and Conditions</a></footer><script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script><script>firebase.initializeApp({
+</div><div id="feedback"><svg style="display: none;"><defs><polygon id="star" points="19.8,2.2,6.6,43.56,39.6,17.16,0,17.16,33,43.56"></polygon></defs></svg><hr><p>Before you can finish your Parallelogram, you need to take 30 seconds to answer a few questions that will tell us what you thought about this week’s challenges.</p><table><tr><td>Too easy</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Too difficult</td></tr><tr><td>Too short</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Too long</td></tr><tr><td>Horrible</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Lots of fun</td></tr><tr><td>Very boring</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Very interesting</td></tr></table></div><div id="submit" data-challenge="2"><button>Submit Answers</button></div><p style="display: none;">Don’t forget: your score and the correct answers will appear here at 7.31pm on Sunday.</p></div></div><footer><a href="http://goodthinkingsociety.org" target="_blank">Good Thinking Society</a>•<a href="/terms-and-conditions">Terms and Conditions</a>•<a href="/contact">Contact</a></footer><script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script><script>firebase.initializeApp({
   apiKey: "AIzaSyCrQ_PdH-05lcNWETGvGfiwO3MBXk_WeVU",
   authDomain: "parallel-cf800.firebaseapp.com",
   databaseURL: "https://parallel-cf800.firebaseio.com",
@@ -201,7 +234,7 @@ Answer: <input type="number" data-id="s3-q1"/><br>
   storageBucket: "parallel-cf800.appspot.com",
   messagingSenderId: "610680271345"
 });
-</script><script defer src="https://unpkg.com/vue"></script><script defer src="/scripts.js?v2"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+</script><script defer src="https://unpkg.com/vue@2.3.4/dist/vue.min.js"></script><script defer src="/scripts.js?v2"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q || []).push(arguments)},i[r].l=1 * new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
