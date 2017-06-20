@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Parallel Project</title><meta name="description" content="A project to email weekly maths problems and challenges to students."><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="msapplication-tap-highlight" content="no"><link rel="manifest" href="/manifest.json"><link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet"><link href="/styles.css?v2" rel="stylesheet"></head><body><a id="logo" href="/" title="Home"></a><div id="body"><div class="login" v-if="!user"><a class="target" v-on:click="login.toggleDropdown">Login</a><form id="login" v-bind:class="{active: login.showDropdown}" v-on:submit="login.submit"><div class="error" v-show="login.error">{{login.error}}</div><input placeholder="Email" required type="email" v-model="login.email" autocomplete="email"><input placeholder="Password" required type="password" v-model="login.password" autocomplete="current-password"><button type="submit">Login</button></form></div><div class="login" v-if="user"><div class="target">{{user.first}} (<a v-on:click="logout">Logout</a>)</div></div><nav v-if="user"><a href="/" style="background-image: url('/nav/0.png');" title="Home"></a><a href="/1-maths-jokes" style="background-image: url('/nav/1.png');" title="Challenge 1: Maths Jokes"></a><a href="/2-good-will-hunting" style="background-image: url('/nav/2.png');" title="Challenge 2: Good Will Hunting"></a><a href="/3-summaze" style="background-image: url('/nav/3.png');" title="Challenge 3: Summaze" data-show="2017-06-01T00:00:00.000Z"></a><a href="/4-graphs-and-networks" style="background-image: url('/nav/4.png');" title="Challenge 4: Graphs and Networks" data-show="2017-06-08T00:00:00.000Z"></a></nav><div class="container"><div><h1>Parallelogram #01</h1>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Parallel Project</title><meta name="description" content="A project to email weekly maths problems and challenges to students."><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="msapplication-tap-highlight" content="no"><link rel="manifest" href="/manifest.json"><link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet"><link href="/styles.css?v2" rel="stylesheet"></head><body><a id="logo" href="/" title="Home"></a><div id="body"><div class="login" v-if="!user"><a class="target" v-on:click="login.toggleDropdown">Login</a><form id="login" v-bind:class="{active: login.showDropdown}" v-on:submit="login.submit"><div class="error" v-show="login.error">{{login.error}}</div><input placeholder="Email" required type="email" v-model="login.email" autocomplete="email"><input placeholder="Password" required type="password" v-model="login.password" autocomplete="current-password"><button type="submit">Login</button><p><a href="/contact">I've forgotten my email address or password</a></p></form></div><div class="login" v-if="user"><div class="target">{{user.first}} (<a v-on:click="logout">Logout</a>)</div></div><nav v-if="user"></nav><div class="container"><div><h1>Parallelogram #01</h1>
 <div style="text-align:center">Noun: parallelogram
 Pronounced: /ˌparəˈlɛləɡram/
 <p><em>Origin: late 16th century: from French parallélogramme, via late Latin from Greek parallēlogrammon, from parallēlos ‘alongside another’ + grammē ‘line’.</em></div></p>
@@ -18,9 +18,10 @@ This week’s Parallelogram challenge is in seven parts… some Challenges will 
 <li>Bloodhound &amp; the world speed record</li>
 <li>Weird optical illusions</li>
 </ol>
-<p>IMPORTANT – you will get points for every correct answer (or nearly correct answer).<br>
-IMPORTANT – some questions have a hint (sometimes two hints). Please think hard and try hard before resorting to the hint. The hints will help you get the right answer, but you will lose marks.<br>
-IMPORTANT – it does not really matter what you score get, the main thing is that you think hard about the problems...and then learn where you went wrong when the answer sheet appears.</p>
+<p><strong>IMPORTANT</strong> – <em>you will get points for every correct answer (or nearly correct answer).</em><br>
+<strong>IMPORTANT</strong> – <em>some questions have a hint (sometimes two hints). Please think hard and try hard before resorting to the hint. The hints will help you get the right answer, but you will lose marks.</em><br>
+<strong>IMPORTANT</strong> – <em>it does not really matter what you score get, the main thing is that you think hard about the problems...and then learn where you went wrong when the answer sheet appears.</em></p>
+<hr>
 <h2>1. Maths jokes</h2>
 <p>It sounds odd, but there are maths jokes. Lots of jokes. In fact, lots of mathematicians are very funny. Some of my favourite comedians (Dara O'Briain, Romesh Ranganathan and Dave Gorman) studied maths at university, and I have written a whole book about the mathematicians who write The Simpsons.<br>
 So, how good is your mathematical sense of humour? And how much maths do you know? Below are 4 jokes with 3 punchlines each. Can you spot the punchline? You will need to a bit of maths in order to work out the right answer.</p>
@@ -28,38 +29,58 @@ So, how good is your mathematical sense of humour? And how much maths do you kno
 (a) Because 1, 2, 3<br>
 (b) Because 7, 8, 9<br>
 (c) Because 5 predates 6<br>
-Answer: <select v-model="answers.q_1_1"><option>A</option><option>B</option><option>C</option></select></p>
+Your answer: <select v-model="answers.q_1_1"><option>A</option><option>B</option><option>C</option></select><br>
+<em>[1/2 mark]</em></p>
+<div v-if="showAnswers" style="color:#FF0000" strong>
+<p>The correct answer is (b).</p>
+</div>
 <p><strong>1.2 What are the 10 kinds of people in the world?</strong><br>
 (a) Set 0, Set 1, Set 2, … Set 9<br>
 (b) α, β, γ, δ, ε, ζ, η, θ, ι, κ<br>
 (c) Those who understand binary, and those who don’t<br>
-Answer: <select v-model="answers.q_1_2"><option>A</option><option>B</option><option>C</option></select></p>
+Answer: <select v-model="answers.q_1_2"><option>A</option><option>B</option><option>C</option></select><br>
+<em>[1/2 mark]</em></p>
+<div v-if="showAnswers" style="color:#FF0000" strong>
+<p>The correct answer is (c).</p>
+</div>
 <p><strong>1.3 What does the “B” in Benoit B Mandelbrot stand for?</strong><br>
 (a) Benoit B Mandelbrot<br>
 (b) Binomial<br>
 (c) Breviation<br>
-Answer: <select v-model="answers.q_1_3"><option>A</option><option>B</option><option>C</option></select></p>
+Answer: <select v-model="answers.q_1_3"><option>A</option><option>B</option><option>C</option></select><br>
+<em>[1/2 mark]</em></p>
+<div v-if="showAnswers" style="color:#FF0000" strong>
+<p>The correct answer is (a).</p>
+</div>
 <p><strong>1.4 Why did the chicken cross the Möbius strip?</strong><br>
 (a) To get to the other…. er…?<br>
 (b) To reach a finite conclusion<br>
 (c) To integrate itself into the tarmac<br>
-Answer: <select v-model="answers.q_1_4"><option>A</option><option>B</option><option>C</option></select></p>
+Answer: <select v-model="answers.q_1_4"><option>A</option><option>B</option><option>C</option></select><br>
+<em>[1/2 mark]</em></p>
+<div v-if="showAnswers" style="color:#FF0000" strong>
+<p>The correct answer is (a).</p>
+</div>
+<hr>
 <h2>2. Mini cross-number</h2>
 <p><strong>2.1. What is the digit x in this cross-number?</strong></p>
 <p><img src="/images/crossnumber.png" alt=""></p>
-<p><strong>Across</strong></p>
-<ol>
-<li>A cube</li>
-<li>A cube</li>
-</ol>
-<p><strong>Down</strong></p>
-<ol>
-<li>One less than a cube</li>
-<li>A number</li>
-</ol>
-<p>x = <input type="number" v-model="answers.q_2_1"/></p>
+<p><strong>Across</strong><br>
+<strong>1.</strong> A cube<br>
+<strong>3.</strong> A cube</p>
+<p><strong>Down</strong><br>
+<strong>1.</strong> One less than a cube<br>
+<strong>2.</strong> A number</p>
+<p>x = <input type="number" v-model="answers.q_2_1"/><br>
+<em>[2 marks]</em></p>
+<div v-if="showAnswers" style="color:#FF0000" strong>
+<p>The correct answer is:<br>
+27<br>
+64</p>
+</div>
 <div class="hint" data-id="hint-1"><div class="hint-body"><h3>HINT 1</h3><p>1 across, 3 across &amp; 1 down are all cubes (or one less than a cube) and they are all 2-digit numbers, which means they are between 10 and 99. There are not very many cube numbers between 10 and 99, so start by writing them down and then see how they might fit into the grid.</p>
-</div></div><h2>3. Maryam’s inspiration</h2>
+</div></div><hr>
+<h2>3. Maryam’s inspiration</h2>
 <p><img src="/images/maryam-mirzakhani.png" alt=""></p>
 <p>You might be surprised to know that there is no Nobel Prize for maths. However, there is an even bigger prize for mathematicians, which is called the Fields Medal. It is only given every 4 years, so it is very rare and precious.<br>
 In 2014, Maryam Mirzakhani became the first woman to win a Fields Medal. She was born in Iran and now works in America, and you can find out about life and work in the short video below.<br>
@@ -70,9 +91,13 @@ Not surprisingly, Maryam talks about some incredibly complex maths, so don’t w
 (b) Darts<br>
 (c) Billiards<br>
 (d) Table tennis<br>
-Answer: <select v-model="answers.q_3_1"><option>A</option><option>B</option><option>C</option><option>D</option></select></p>
-<p>Maryam has said that she first became fired up about mathematics when her big brother told her a story about the great mathematician Carl Friedrich Gauss. When Gauss was a schoolboy, his teacher tried to keep the class busy by asking them to add up all the numbers from 1 to 100. I suspect that he wanted to nip out for a 15-minute nap.</p>
-<p><img src="/images/gauss.png" alt=""></p>
+Answer: <select v-model="answers.q_3_1"><option>A</option><option>B</option><option>C</option><option>D</option></select><br>
+<em>[1 mark]</em></p>
+<div v-if="showAnswers" style="color:#FF0000" strong>
+<p>The correct answer is (c).</p>
+</div>
+<img src="/images/gauss.png" style="float: right; margin-left: 1rem"/>
+Maryam has said that she first became fired up about mathematics when her big brother told her a story about the great mathematician Carl Friedrich Gauss. When Gauss was a schoolboy, his teacher tried to keep the class busy by asking them to add up all the numbers from 1 to 100. I suspect that he wanted to nip out for a 15-minute nap.
 <p>However, before the teacher had even left the room, Gauss’s hand shot up and he announced that the answer was 5,050.</p>
 <p>Gauss was right, but how did he add up the first 100 numbers in just a few seconds?</p>
 <p>Here is Gauss's trick in three stages:</p>
@@ -101,9 +126,18 @@ Answer: <select v-model="answers.q_3_1"><option>A</option><option>B</option><opt
 </ul>
 <p>Let’s see if you can apply Gauss’s trick.</p>
 <p><strong>3.2 Add up all the numbers from 1 to 50</strong><br>
-Answer: <input type="number" v-model="answers.q_3_2"></input></p>
+Answer: <input type="number" v-model="answers.q_3_2"></input><br>
+<em>[1 mark]</em></p>
+<div v-if="showAnswers" style="color:#FF0000" strong>
+<p>The correct answer is 1,275.</p>
+</div>
 <p><strong>3.3 Add up all the numbers from 1 to 1,000</strong><br>
-Answer: <input type="number" v-model="answers.q_3_3"></input></p>
+Answer: <input type="number" v-model="answers.q_3_3"></input><br>
+<em>[1 mark]</em></p>
+<div v-if="showAnswers" style="color:#FF0000" strong>
+<p>The correct answer is 500,500.</p>
+</div>
+<hr>
 <h2>4. Domino toppling</h2>
 <p>I watched this terrific video last week. Take a look and answer the question afterwards.</p>
 <p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/5JCm5FY-dEY" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
@@ -112,10 +146,15 @@ Answer: <input type="number" v-model="answers.q_3_3"></input></p>
 (b) 100<br>
 (c) 30,000<br>
 (d) 100,000,000<br>
-Answer: <select v-model="answers.q_4_1"><option>A</option><option>B</option><option>C</option><option>D</option></select></p>
+Answer: <select v-model="answers.q_4_1"><option>A</option><option>B</option><option>C</option><option>D</option></select><br>
+<em>[1 mark]</em></p>
+<div v-if="showAnswers" style="color:#FF0000" strong>
+<p>The correct answer is 30.</p>
+</div>
 <p>Each domino can knock over a domino that 1.5 times bigger, which does not seem big, but it this happens over and over again then the dominoes get bigger and bigger very quickly. This is known as exponential growth and we will return to this in a future Parallelogram.
 In the meantime, here is an even more extraordinary example of domino toppling where the dominos get bigger and bigger. In fact, it was a world record at the time.</p>
 <p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/8yYWILv91YU&amp;t=2m56s" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
+<hr>
 <h2>5. Junior Maths Challenge question</h2>
 <p><em>(This question is taken from JMC 2017, question 13.)</em></p>
 <p><strong>5.1. Consider the following three statements.</strong></p>
@@ -123,12 +162,17 @@ In the meantime, here is an even more extraordinary example of domino toppling w
 (ii) Squaring a positive number always makes it larger.<br>
 (iii) Taking the positive square root of a positive number always makes it smaller.</p>
 <p>Which of the above statements are true?</p>
-<p>(A) All three<br>
-(B) None<br>
-(C) Only (i)<br>
-(D) (i) and (ii)<br>
-(E) (ii) and (iii)<br>
-Answer: <select v-model="answers.q_5_1"><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select></p>
+<p>(a) All three<br>
+(b) None<br>
+(c) Only (i)<br>
+(d) (i) and (ii)<br>
+(e) (ii) and (iii)</p>
+<p>Answer: <select v-model="answers.q_5_1"><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select><br>
+<em>[1 mark]</em></p>
+<div v-if="showAnswers" style="color:#FF0000" strong>
+<p>The correct answer is (c).</p>
+</div>
+<hr>
 <h2>6. Weird optical illusions</h2>
 <p>The amazing, mind-warping objects in this video have been created by mathematical artist and engineer Professor Kokichi Sugihara. These incredible illusions literally mess with your brain.<br>
 Sometimes the geometry that you study at school might seem ordinary – what could be more ordinary than the angles of a triangle or the symmetry of a square? – but your teachers are providing you with the first stepping stones towards gaining an understanding the nature of space, and how you can build the sort of blabberghasting structures in this video. There is one question afterwards and then you can hit the submit button and your first Parallelogram has been completed.</p>
@@ -137,25 +181,19 @@ Sometimes the geometry that you study at school might seem ordinary – what cou
 (a) Drivers<br>
 (b) Architects<br>
 (c) Surgeons<br>
-Answer: <select v-model="answers.q_6_1"><option>A</option><option>B</option><option>C</option></select></p>
-<h2>Feedback</h2>
-<p>Before you can finish your Parallelogram, you need to take 30 seconds to answer a few questions that will tell us what you thought about this week’s challenges.</p>
-<div style="text-align:center">
-<p>How difficult was this Parallelogram?<br>
-<select v-model="feedback.difficulty"><option>Very Easy</option><option>Quite Easy</option><option>OK</option><option>Quite Difficult</option><option>Very Difficult</option></select></p>
-<p>How long was this Parallelogram?<br>
-<select v-model="feedback.length"><option>Very Short</option><option>A Bit Short</option><option>OK</option><option>A Bit Long</option><option>Very Long</option></select></p>
-<p>How much fun was this Parallelogram?<br>
-<select v-model="feedback.fun"><option>Very Horrible</option><option>A Bit Horrible</option><option>OK</option><option>Quite Fun</option><option>Very Fun</option></select></p>
-<p>How interesting was this Parallelogram?<br>
-<select v-model="feedback.interest"><option>Very Boring</option><option>A Bit Boring</option><option>OK</option><option>A Bit Interesting</option><option>Very Interesting</option></select></p>
+Answer: <select v-model="answers.q_6_1"><option>A</option><option>B</option><option>C</option></select><br>
+<em>[1 mark]</em></p>
+<div v-if="showAnswers" style="color:#FF0000" strong>
+<p>The correct answer is (a).</p>
 </div>
+<hr>
 <h2>Further Interest</h2>
 <p>You can read more about mathematician Maryam Mirzakhani in <a href="https://www.theguardian.com/science/2014/aug/13/interview-maryam-mirzakhani-fields-medal-winner-mathematician">this interview published in the Guardian</a>: 'The more I spent time on maths, the more excited I got'.</p>
 <p><a href="http://www.telegraph.co.uk/news/science/11029161/The-Fields-Medal-is-the-greatest-prize-in-maths.html">This article from the Telegraph newspaper</a> provides some history about the Fields Medal, the biggest prize in mathematics.</p>
 <p><a href="https://betterexplained.com/articles/techniques-for-adding-the-numbers-1-to-100/">This website</a> goes into more detail about ways of adding the numbers from 1 to 100, and is worth looking at.</p>
 <p>Don’t forget, your score and answers will be available <a href="www.parallelogram.org.uk/Sunday-answers-and-score">here</a> from 7.31 on Sunday.</p>
-</div><div id="submit"><button>Submit your Answers</button></div></div></div><footer><a href="http://goodthinkingsociety.org" target="_blank">Good Thinking Society</a>•<a href="/terms-and-conditions">Terms and Conditions</a></footer><script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script><script>firebase.initializeApp({
+<hr>
+</div><h3>Feedback & Submit Answers</h3><p>Before you can finish your Parallelogram, you need to take 30 seconds to answer a few questions that will tell us what you thought about this week’s challenges.</p><form v-on:submit="answers.submit"><label>How difficult was this Parallelogram?<select v-model="feedback.difficulty" required><option>Very Easy</option><option>A Bit Easy</option><option>Ok</option><option>A Bit Difficult</option><option>Very Difficult</option></select></label><label>How long was this Parallelogram?<select v-model="feedback.length" required><option>Very Short</option><option>A Bit Short</option><option>Ok</option><option>A Bit Long</option><option>Very Long</option></select></label><label>How much fun was this Parallelogram?<select v-model="feedback.fun" required><option>Very Horrible</option><option>A Bit Horrible</option><option>Ok</option><option>A Bit Fun</option><option>Very Fun</option></select></label><label>How interesting was this Parallelogram?<select v-model="feedback.interest" required><option>Very Boring</option><option>A Bit Boring</option><option>Ok</option><option>A Bit Interesting</option><option>Very Interesting</option></select><button type="submit">Submit Answers</button></label></form></div></div><footer><a href="http://goodthinkingsociety.org" target="_blank">Good Thinking Society</a>•<a href="/terms-and-conditions">Terms and Conditions</a></footer><script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script><script>firebase.initializeApp({
   apiKey: "AIzaSyCrQ_PdH-05lcNWETGvGfiwO3MBXk_WeVU",
   authDomain: "parallel-cf800.firebaseapp.com",
   databaseURL: "https://parallel-cf800.firebaseio.com",
