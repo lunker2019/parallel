@@ -1,7 +1,7 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Parallel Project</title><meta name="description" content="A project to email weekly maths problems and challenges to students."><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="msapplication-tap-highlight" content="no"><link rel="manifest" href="/manifest.json"><link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet"><link href="/styles.css?v3" rel="stylesheet"></head><body><a id="logo" href="/" title="Home"></a><div id="body" v-bind:class="{submitted: answers.submitted}"><div class="login" v-if="!user"><a class="target" v-on:click="login.toggleDropdown">Login</a><form id="login" v-bind:class="{active: login.showDropdown}" v-on:submit="login.submit"><div class="error" v-show="login.error">{{login.error}}</div><input placeholder="Email" required type="email" v-model="login.email" autocomplete="email"><input placeholder="Password" required type="password" v-model="login.password" autocomplete="current-password"><button type="submit">Login</button><p><a href="#">Reset password</a></p></form></div><div class="login" v-if="user"><div class="target">{{user.first}} (<a v-on:click="logout">Logout</a>)</div></div><nav v-if="user"><a href="/" style="background-image: url('/nav/0.png');" title="Home"></a><a href="/1-maths-jokes" style="background-image: url('/nav/1.png');" title="Challenge 1: Maths Jokes"></a><a href="/2-good-will-hunting" style="background-image: url('/nav/2.png');" title="Challenge 2: Good Will Hunting"></a><a href="/3-summaze" style="background-image: url('/nav/3.png');" title="Challenge 3: Summaze"></a><a href="/4-graphs-and-networks" style="background-image: url('/nav/4.png');" title="Challenge 4: Graphs and Networks"></a></nav><div class="container"><div><h1>Parallelogram #1</h1>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Parallel Project</title><meta name="description" content="A project to email weekly maths problems and challenges to students."><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="msapplication-tap-highlight" content="no"><link rel="manifest" href="/manifest.json"><link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet"><link href="/styles.css?v3" rel="stylesheet"></head><body><a id="logo" href="/" title="Home"></a><div id="body" v-bind:class="{submitted: answers.submitted}"><div class="login" v-if="!user"><a class="target" v-on:click="login.toggleDropdown">Login</a><form id="login" v-bind:class="{active: login.showDropdown}" v-on:submit="login.submit"><div class="error" v-show="login.error">{{login.error}}</div><input placeholder="Email" required type="email" v-model="login.email" autocomplete="email"><input placeholder="Password" required type="password" v-model="login.password" autocomplete="current-password"><button type="submit">Login</button><p><a href="#">Reset password</a></p></form></div><div class="login" v-if="user"><div class="target">{{user.first}} (<a v-on:click="logout">Logout</a>)</div></div><nav v-if="user"><a href="/" style="background-image: url('/nav/0.png');" title="Home"></a><a href="/01-maryam-jokey-toppling-bloodhound" style="background-image: url('/nav/1.png');" title="Challenge 1: Maths Jokes"></a><a href="/2-good-will-hunting" style="background-image: url('/nav/2.png');" title="Challenge 2: Good Will Hunting"></a><a href="/3-summaze" style="background-image: url('/nav/3.png');" title="Challenge 3: Summaze"></a><a href="/4-graphs-and-networks" style="background-image: url('/nav/4.png');" title="Challenge 4: Graphs and Networks"></a></nav><div class="container"><div><h1>Parallelogram #1</h1>
 <p>Welcome to the first of four weekly Parallelograms, a collection of mathematical challenges designed to stretch your brain and make your neurons more squiggly.
-You can start and stop whenever you like, but you will need to complete all the challenges by 7pm on Sunday. Then, return to the site one minute later at 7.01pm and you will find your score and a sheet with answers and explanations. Then there will be an online tutorial at 8pm – more information about joining the tutorial appears when you have finished this Parallogram.
-This week’s Parallelogram challenge is in seven parts… some Challenges will have a single theme, while others have sections that shoot off in wildly different directions. In short, these challenges are often going to be a random walk through the mysteries of mathematics. Be prepared to encounter all sorts of weird ideas.</p>
+You can start and stop whenever you like, but you will need to complete all the challenges by 7pm on Sunday.</p>
+<p>This week’s Parallelogram challenge is in seven parts… some Challenges will have a single theme, while others have sections that shoot off in wildly different directions. In short, these challenges are often going to be a random walk through the mysteries of mathematics. Be prepared to encounter all sorts of weird ideas.</p>
 <ol>
 <li>Maths jokes</li>
 <li>Mini cross-number</li>
@@ -23,7 +23,7 @@ This week’s Parallelogram challenge is in seven parts… some Challenges will 
 <p>It sounds odd, but there are maths jokes. Lots of jokes. In fact, lots of mathematicians are very funny. Some of my favourite comedians (Dara O'Briain, Romesh Ranganathan and Dave Gorman) studied maths at university, and I have written a whole book about the mathematicians who write The Simpsons.</p>
 <p>So, how good is your mathematical sense of humour? And how much maths do you know? Below are 4 jokes with 3 punchlines each. Can you spot the punchline? You will need to a bit of maths in order to work out the right answer.</p>
 <div class="problem">
-<div class="marks">1/2 mark</div>
+<div class="marks">½ mark</div>
 <p><strong>1.1. Why is 6 afraid of 7?</strong></p>
 <div class="choice radio">
   <div v-on:click="setAnswer('p_1_1', 'a')" v-bind:class="{active: answers.p_1_1 == 'a'}">(a) Because 1, 2, 3</div>
@@ -33,7 +33,7 @@ This week’s Parallelogram challenge is in seven parts… some Challenges will 
 <div v-if="showAnswers" style="color:#FF0000" strong>
   The correct answer is (b).
 </div>
-<div class="marks">1/2 mark</div>
+<div class="marks">½ mark</div>
 <p><strong>1.2 What are the 10 kinds of people in the world?</strong></p>
 <div class="choice radio">
   <div v-on:click="setAnswer('p_1_2', 'a')" v-bind:class="{active: answers.p_1_2 == 'a'}">(a) Set 0, Set 1, Set 2, …, Set 9</div>
@@ -43,7 +43,7 @@ This week’s Parallelogram challenge is in seven parts… some Challenges will 
 <div v-if="showAnswers" style="color:#FF0000" strong>
   The correct answer is (c).
 </div>
-<div class="marks">1/2 mark</div>
+<div class="marks">½ mark</div>
 <p><strong>1.3 What does the “B” in Benoit B Mandelbrot stand for?</strong></p>
 <div class="choice radio">
   <div v-on:click="setAnswer('p_1_3', 'a')" v-bind:class="{active: answers.p_1_3 == 'a'}">(a) Benoit B Mandelbrot</div>
@@ -53,7 +53,7 @@ This week’s Parallelogram challenge is in seven parts… some Challenges will 
 <div v-if="showAnswers" style="color:#FF0000" strong>
   The correct answer is (a).
 </div>
-<div class="marks">1/2 mark</div>
+<div class="marks">½ mark</div>
 <p><strong>1.4 Why did the chicken cross the Möbius strip?</strong></p>
 <div class="choice radio">
   <div v-on:click="setAnswer('p_1_4', 'a')" v-bind:class="{active: answers.p_1_4 == 'a'}">(a) To get to the other… er…?</div>
@@ -63,13 +63,14 @@ This week’s Parallelogram challenge is in seven parts… some Challenges will 
 <div v-if="showAnswers" style="color:#FF0000" strong>
   The correct answer is (a).
 </div>
+<div class="marks">½ mark</div>
 </div>
 <h2>2. Mini cross-number</h2>
 <div class="problem">
 <div class="marks">2 marks</div>
 <p><strong>2.1 What is the digit x in this cross-number?</strong></p>
 <table><tr><td>
-<p><img src="/images/crossnumber.png" alt=""></p>
+<p><img src="/images/challenges/1/crossnumber.png" alt=""></p>
 </td><td>
 <p><strong>Across</strong><br>
 <strong>1.</strong> A cube<br>
@@ -88,11 +89,11 @@ This week’s Parallelogram challenge is in seven parts… some Challenges will 
 </div>
 <div class="hint" data-id="hint-1"><div class="hint-body"><h3>HINT 1</h3><p>1 across, 3 across &amp; 1 down are all cubes (or one less than a cube) and they are all 2-digit numbers, which means they are between 10 and 99. There are not very many cube numbers between 10 and 99, so start by writing them down and then see how they might fit into the grid.</p>
 </div></div><h2>3. Maryam’s inspiration</h2>
-<p><img src="/images/maryam-mirzakhani.png" alt=""></p>
-<p>You might be surprised to know that there is no Nobel Prize for maths. However, there is an even bigger prize for mathematicians, which is called the Fields Medal. It is only given every 4 years, so it is very rare and precious.</p>
+<img src="/images/challenges/1/maryam-mirzakhani.png" style="float: left; margin-right: 1rem"/>
+You might be surprised to know that there is no Nobel Prize for maths. However, there is an even bigger prize for mathematicians, which is called the Fields Medal. It is only given every 4 years, so it is very rare and precious.
 <p>In 2014, Maryam Mirzakhani became the first woman to win a Fields Medal. She was born in Iran and now works in America, and you can find out about life and work in the short video below.</p>
 <p>Not surprisingly, Maryam talks about some incredibly complex maths, so don’t worry if you find it confusing. In fact, if you think you understand what Maryam is describing, then you probably don’t. Watch it carefully and answer the question below.</p>
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/4GhbMhQLp_g" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/4GhbMhQLQ_g?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
 <div class="problem">
 <div class="marks">1 mark</div>
 <p><strong>3.1 What indoor sport does Maryam mention in one of her mathematical examples?</strong></p>
@@ -106,7 +107,7 @@ This week’s Parallelogram challenge is in seven parts… some Challenges will 
   The correct answer is (c).
 </div>
 </div>
-<img src="/images/gauss.png" style="float: right; margin-left: 1rem"/>
+<img src="/images/challenges/1/gauss.png" style="float: right; margin-left: 1rem"/>
 <p>Maryam has said that she first became fired up about mathematics when her big brother told her a story about the great mathematician Carl Friedrich Gauss. When Gauss was a schoolboy, his teacher tried to keep the class busy by asking them to add up all the numbers from 1 to 100. I suspect that he wanted to nip out for a 15-minute nap.</p>
 <p>However, before the teacher had even left the room, Gauss’s hand shot up and he announced that the answer was 5,050.</p>
 <p>Gauss was right, but how did he add up the first 100 numbers in just a few seconds?</p>
@@ -128,7 +129,7 @@ This week’s Parallelogram challenge is in seven parts… some Challenges will 
 </li>
 </ol>
 <p>Another way to think about this is:</p>
-<p><img src="/images/sum-equation.png" alt=""></p>
+<p><img src="/images/challenges/1/gauss-equation.png" alt=""></p>
 <ul>
 <li><strong>(n+1)</strong> represents step 1, because you pair up all the numbers, so that all the pairs add up to <strong>(n+1)</strong>.</li>
 <li><strong>(n/2)</strong> represents step 2, because the number of pairs is equal to the total number of numbers divided by 2.</li>
@@ -151,7 +152,7 @@ This week’s Parallelogram challenge is in seven parts… some Challenges will 
 </div>
 <h2>4. Domino toppling</h2>
 <p>I watched this terrific video last week. Take a look and answer the question afterwards.</p>
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/5JCm5FY-dEY" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/5JCm5FY-dEY?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
 <div class="problem">
 <div class="marks">1 mark</div>
 <p><strong>4.1 Starting with 5mm tall domino, how many dominoes would you need to knock down the Empire State Building?</strong></p>
@@ -165,9 +166,9 @@ This week’s Parallelogram challenge is in seven parts… some Challenges will 
   The correct answer is 30.
 </div>
 </div>
-<p>Each domino can knock over a domino that 1.5 times bigger, which does not seem big, but it this happens over and over again then the dominoes get bigger and bigger very quickly. This is known as exponential growth and we will return to this in a future Parallelogram.
+<p>Each domino can knock over a domino that 1.5 times bigger, which does not seem big, but when this happens over and over again then the dominoes get bigger and bigger very quickly. This is known as exponential growth and we will return to this in a future Parallelogram.
 In the meantime, here is an even more extraordinary example of domino toppling where the dominos get bigger and bigger. In fact, it was a world record at the time.</p>
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/8yYWILv91YU&amp;t=2m56s" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/8yYWILv91YU" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
 <h2>5. Junior Maths Challenge question</h2>
 <div class="problem">
 <div class="marks">1 mark</div>
@@ -180,12 +181,11 @@ In the meantime, here is an even more extraordinary example of domino toppling w
 <div v-if="showAnswers" style="color:#FF0000" strong>
   The correct answer is just (i).
 </div>
-<p><em>(This question is taken from JMC 2017, question 13.)</em></p>
 </div>
-<h2>6. Weird optical illusions</h2>
+<h2><strong>6. Weird optical illusions</strong></h2>
 <p>The amazing, mind-warping objects in this video have been created by mathematical artist and engineer Professor Kokichi Sugihara. These incredible illusions literally mess with your brain.<br>
-Sometimes the geometry that you study at school might seem ordinary – what could be more ordinary than the angles of a triangle or the symmetry of a square? – but your teachers are providing you with the first stepping stones towards gaining an understanding the nature of space, and how you can build the sort of blabberghasting structures in this video. There is one question afterwards and then you can hit the submit button and your first Parallelogram has been completed.</p>
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/Wx4yi5m8IfI" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
+Sometimes the geometry that you study at school might seem ordinary – what could be more ordinary than the angles of a triangle or the symmetry of a square? – but your teachers are providing you with the first stepping stones towards gaining an understanding of the nature of space, and how you can build the sort of flabbergasting structures in this video. There is one question afterwards and then you can hit the submit button and your first Parallelogram has been completed.</p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/Wx4yi5m8IfI?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
 <div class="problem">
 <div class="marks">1 mark</div>
 <p><strong>6.1 Professor Sugihara’s work could help:</strong></p>
@@ -198,11 +198,13 @@ Sometimes the geometry that you study at school might seem ordinary – what cou
   The correct answer is (a).
 </div>
 </div>
-<h2>Further Interest</h2>
+<h2>Find out more</h2>
 <p>You can read more about mathematician Maryam Mirzakhani in <a href="https://www.theguardian.com/science/2014/aug/13/interview-maryam-mirzakhani-fields-medal-winner-mathematician">this interview published in the Guardian</a>: 'The more I spent time on maths, the more excited I got'.</p>
 <p><a href="http://www.telegraph.co.uk/news/science/11029161/The-Fields-Medal-is-the-greatest-prize-in-maths.html">This article from the Telegraph newspaper</a> provides some history about the Fields Medal, the biggest prize in mathematics.</p>
 <p><a href="https://betterexplained.com/articles/techniques-for-adding-the-numbers-1-to-100/">This website</a> goes into more detail about ways of adding the numbers from 1 to 100, and is worth looking at.</p>
-</div><div id="feedback"><svg style="display: none;"><defs><polygon id="star" points="19.8,2.2,6.6,43.56,39.6,17.16,0,17.16,33,43.56"></polygon></defs></svg><hr><p>Before you can finish your Parallelogram, you need to take 30 seconds to answer a few questions that will tell us what you thought about this week’s challenges.</p><table><tr><td>Too easy</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Too difficult</td></tr><tr><td>Too short</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Too long</td></tr><tr><td>Horrible</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Lots of fun</td></tr><tr><td>Very boring</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Very interesting</td></tr></table></div><div id="submit" v-show="!answers.submitted" data-challenge="1"><button v-on:click="submit">Submit Answers</button></div><p class="completed" v-show="answers.submitted">Well done! your score and the correct answers will appear here at 7.30pm on Sunday.</p></div></div><footer><a href="http://goodthinkingsociety.org" target="_blank">Good Thinking Society</a>•<a href="/terms-and-conditions">Terms and Conditions</a>•<a href="/contact">Contact</a></footer><script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script><script>firebase.initializeApp({
+<h2>Credits</h2>
+<p>The problems in this Parallelogram come from a variety of places and we will list them in the fourth and final Parallelogram.</p>
+</div><div id="feedback"><svg style="display: none;"><defs><polygon id="star" points="19.8,2.2,6.6,43.56,39.6,17.16,0,17.16,33,43.56"></polygon></defs></svg><hr><p>Before you can finish your Parallelogram, you need to take 30 seconds to answer a few questions that will tell us what you thought about this week’s challenges.</p><table><tr><td>Too easy</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Too difficult</td></tr><tr><td>Too short</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Too long</td></tr><tr><td>Horrible</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Lots of fun</td></tr><tr><td>Very boring</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Very interesting</td></tr></table></div><div id="submit" v-show="!answers.submitted" data-challenge="1"><button v-on:click="submit">Submit Answers</button></div><p class="completed" v-show="answers.submitted">Well done! your score and the correct answers will appear here at 7.01pm on Sunday.</p></div></div><footer><a href="http://goodthinkingsociety.org" target="_blank">Good Thinking Society</a>•<a href="/terms-and-conditions">Terms and Conditions</a>•<a href="/contact">Contact</a></footer><script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script><script>firebase.initializeApp({
   apiKey: "AIzaSyCrQ_PdH-05lcNWETGvGfiwO3MBXk_WeVU",
   authDomain: "parallel-cf800.firebaseapp.com",
   databaseURL: "https://parallel-cf800.firebaseio.com",
