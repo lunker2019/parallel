@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Parallel Project</title><meta name="description" content="A project to email weekly maths problems and challenges to students."><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="msapplication-tap-highlight" content="no"><link rel="manifest" href="/manifest.json"><link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet"><link href="/styles.css?v3" rel="stylesheet"></head><body><a id="logo" href="/" title="Home"></a><div id="body" v-bind:class="{submitted: answers.submitted}"><div class="login" v-if="!user"><a class="target" v-on:click="login.toggleDropdown">Login</a><form id="login" v-bind:class="{active: login.showDropdown}" v-on:submit="login.submit"><div class="error" v-show="login.error">{{login.error}}</div><input placeholder="Email" required type="email" v-model="login.email" autocomplete="email"><input placeholder="Password" required type="password" v-model="login.password" autocomplete="current-password"><button type="submit">Login</button><p><a href="#">Reset password</a></p></form></div><div class="login" v-if="user"><div class="target">{{user.first}} (<a v-on:click="logout">Logout</a>)</div></div><nav v-if="user"><a href="/" style="background-image: url('/nav/0.png');" title="Home"></a><a href="/01-maryam-jokey-toppling-bloodhound" style="background-image: url('/nav/1.png');" title="Challenge 1: Maths Jokes"></a><a href="/2-good-will-hunting" style="background-image: url('/nav/2.png');" title="Challenge 2: Good Will Hunting"></a><a href="/3-summaze" style="background-image: url('/nav/3.png');" title="Challenge 3: Summaze"></a><a href="/4-graphs-and-networks" style="background-image: url('/nav/4.png');" title="Challenge 4: Graphs and Networks"></a></nav><div class="container"><div><h1>Parallelogram #1</h1>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Parallel Project</title><meta name="description" content="A project to email weekly maths problems and challenges to students."><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="msapplication-tap-highlight" content="no"><link rel="manifest" href="/manifest.json"><link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet"><link href="/styles.css?v3" rel="stylesheet"></head><body><a id="logo" href="/" title="Home"></a><div id="body"><div class="login" v-if="!user"><a class="target" v-on:click="login.toggleDropdown">Login</a><form id="login" v-bind:class="{active: login.showDropdown}" v-on:submit="login.submit"><div class="error" v-show="login.error">{{login.error}}</div><input placeholder="Email" required type="email" v-model="login.email" autocomplete="email"><input placeholder="Password" required type="password" v-model="login.password" autocomplete="current-password"><button type="submit">Login</button><p><a href="#">Reset password</a></p></form></div><div class="login" v-if="user"><div class="target">{{user.first}} (<a v-on:click="logout">Logout</a>)</div></div><nav v-if="user"><a href="/" style="background-image: url('/nav/0.png');" title="Home"></a><a href="/1-maryam-jokey-toppling-bloodhound" style="background-image: url('/nav/1.png');" title="Challenge 1: Maths Jokes"></a><a href="/2-good-will-hunting" style="background-image: url('/nav/2.png');" title="Challenge 2: Good Will Hunting"></a><a href="/3-summaze" style="background-image: url('/nav/3.png');" title="Challenge 3: Summaze"></a><a href="/4-graphs-and-networks" style="background-image: url('/nav/4.png');" title="Challenge 4: Graphs and Networks"></a></nav><div class="container" v-bind:class="status"><div class="status" v-if="status == 'locked'">This parallelogram is locked and will open in {{countdown}}.</div><div class="status" v-if="status == 'open'">You have {{countdown}} left to submit your answers.</div><div class="status" v-if="status == 'submitted'">You've already submitted your answersand can no longer make changes.<br>The solutions and your score will be shown in {{countdown}}.</div><div class="status" v-if="status == 'revealed'">Your score is [TODO].<br>Your answers and the correct solutions are shown below.</div><div class="status" v-if="status == 'past'">This parallelogram is now closed. You can still have a look at the questions, and submit answers.</div><div><h1>Parallelogram #1</h1>
 <p>Welcome to the first of four weekly Parallelograms, a collection of mathematical challenges designed to stretch your brain and make your neurons more squiggly.
 You can start and stop whenever you like, but you will need to complete all the challenges by 7pm on Sunday.</p>
 <p>This week’s Parallelogram challenge is in seven parts… some Challenges will have a single theme, while others have sections that shoot off in wildly different directions. In short, these challenges are often going to be a random walk through the mysteries of mathematics. Be prepared to encounter all sorts of weird ideas.</p>
@@ -27,41 +27,44 @@ You can start and stop whenever you like, but you will need to complete all the 
 <p><strong>1.1. Why is 6 afraid of 7?</strong></p>
 <div class="choice radio">
   <div v-on:click="setAnswer('p_1_1', 'a')" v-bind:class="{active: answers.p_1_1 == 'a'}">(a) Because 1, 2, 3</div>
-  <div v-on:click="setAnswer('p_1_1', 'b')" v-bind:class="{active: answers.p_1_1 == 'b'}">(b) Because 7, 8, 9</div>
+  <div v-on:click="setAnswer('p_1_1', 'b')" v-bind:class="{active: answers.p_1_1 == 'b'}" class="correct">(b) Because 7, 8, 9</div>
   <div v-on:click="setAnswer('p_1_1', 'c')" v-bind:class="{active: answers.p_1_1 == 'c'}">(c) Because 5 predates 6</div>
 </div>
-<div v-if="showAnswers" style="color:#FF0000" strong>
-  The correct answer is (b).
+<div class="solution">
+  <p>The correct answer is (b), because it sounds like ”7 ate 9”.</p>
 </div>
 <div class="marks">½ mark</div>
 <p><strong>1.2 What are the 10 kinds of people in the world?</strong></p>
 <div class="choice radio">
   <div v-on:click="setAnswer('p_1_2', 'a')" v-bind:class="{active: answers.p_1_2 == 'a'}">(a) Set 0, Set 1, Set 2, …, Set 9</div>
   <div v-on:click="setAnswer('p_1_2', 'b')" v-bind:class="{active: answers.p_1_2 == 'b'}">(b) α, β, γ, δ, ε, ζ, η, θ, ι, κ</div>
-  <div v-on:click="setAnswer('p_1_2', 'c')" v-bind:class="{active: answers.p_1_2 == 'c'}">(c) Those who understand binary, and those who don’t</div>
+  <div v-on:click="setAnswer('p_1_2', 'c')" v-bind:class="{active: answers.p_1_2 == 'c'}" class="correct">(c) Those who understand binary, and those who don’t</div>
 </div>
-<div v-if="showAnswers" style="color:#FF0000" strong>
-  The correct answer is (c).
+<div class="solution">
+  <p>In binary 10 = 2, so 10 kinds of people could mean 2 kinds of people.</p>
 </div>
 <div class="marks">½ mark</div>
 <p><strong>1.3 What does the “B” in Benoit B Mandelbrot stand for?</strong></p>
 <div class="choice radio">
-  <div v-on:click="setAnswer('p_1_3', 'a')" v-bind:class="{active: answers.p_1_3 == 'a'}">(a) Benoit B Mandelbrot</div>
+  <div v-on:click="setAnswer('p_1_3', 'a')" v-bind:class="{active: answers.p_1_3 == 'a'}" class="correct">(a) Benoit B Mandelbrot</div>
   <div v-on:click="setAnswer('p_1_3', 'b')" v-bind:class="{active: answers.p_1_3 == 'b'}">(b) Binomial</div>
   <div v-on:click="setAnswer('p_1_3', 'c')" v-bind:class="{active: answers.p_1_3 == 'c'}">(c) Breviation</div>
 </div>
-<div v-if="showAnswers" style="color:#FF0000" strong>
-  The correct answer is (a).
+<div class="solution">
+  <img src="/images/challenges/1/mandelbrot.png" class="img-right"/>
+  <p>This was a tough one. Benoit B. Mandelbrot helped developed the mathematics of fractals, which are structures or shapes that appear similar when you zoom in or zoom out. Trees, clouds and certain mathematical shapes are fractal, as shown on the right. The bit of the tree in the red box looks just like the whole tree… and you zoom in even further and see more and more micro-replicas of the whole tree.</p>
+  <p><a href="https://www.youtube.com/watch?v=PD2XgQOyCCk" target="_blank">This video</a> shows what happens if you zoom into the so-called Mandelbrot Set, and you see the same pattern (a sort of seahorse’s tail) reappearing again, and again, and again. So, returning to the joke, the B represents Benoit B Mandelbrot, because zooming into the name gives you the whole name again.</p>
 </div>
 <div class="marks">½ mark</div>
 <p><strong>1.4 Why did the chicken cross the Möbius strip?</strong></p>
 <div class="choice radio">
-  <div v-on:click="setAnswer('p_1_4', 'a')" v-bind:class="{active: answers.p_1_4 == 'a'}">(a) To get to the other… er…?</div>
+  <div v-on:click="setAnswer('p_1_4', 'a')" v-bind:class="{active: answers.p_1_4 == 'a'}" class="correct">(a) To get to the other… er…?</div>
   <div v-on:click="setAnswer('p_1_4', 'b')" v-bind:class="{active: answers.p_1_4 == 'b'}">(b) To reach a finite conclusion</div>
   <div v-on:click="setAnswer('p_1_4', 'c')" v-bind:class="{active: answers.p_1_4 == 'c'}">(c) To integrate itself into the tarmac</div>
 </div>
-<div v-if="showAnswers" style="color:#FF0000" strong>
-  The correct answer is (a).
+<div class="solution">
+  <img src="/images/challenges/1/mobius.jpg" class="img-right"/>
+  <p>Another toughie – a Möbius strip is a strange mathematical shape which only has one side, so you can’t get to the other side. As shown here, it is just a loop with a single twist, but if you imagine running your finger along one side of the loop you will find that your finger covers every bit of the loop … so it only has one side. Möbius strips are fantastic, one of my favourite bits of geometry, and we’ll return to them in a future Parallelogram.</p>
 </div>
 </div>
 <h2>2. Mini cross-number</h2>
@@ -79,17 +82,16 @@ You can start and stop whenever you like, but you will need to complete all the 
 <strong>1.</strong> One less than a cube<br>
 <strong>2.</strong> A number</p>
 </td></tr></table>
-<input type="number" placeholder="x" v-on:change="refresh" v-model.lazy="answers.p_2_1"/>
+<input type="number" placeholder="x" v-on:change="refresh" v-model.lazy="answers.p_2_1" v-bind:class="{correct: answers.p_2_1 == 4}"/>
+<div class="solution">
+  <p>The correct answer is <em>x</em> = 4.</p>
+  <p>1 across, 3 across & 1 down are all cubes (or one less than a cube) and they are all 2-digit numbers, which means they are between 10 and 99. The only cube numbers between 10 and 99 are 27 and 64. So 1 across and 3 across must be 27 and 64, or 64 and 27. Meanwhile, 1 down must be 26 or 63. The cross-number only works if 1 down is 26, because 3 across can then be 64, which means <em>x</em> = 4.</p>
 </div>
-<div v-if="showAnswers" style="color:#FF0000" strong>
-  The correct answer is:  
-      27  
-      64
 </div>
 <div class="hint" data-id="hint-1"><div class="hint-body"><h3>HINT 1</h3><p>1 across, 3 across &amp; 1 down are all cubes (or one less than a cube) and they are all 2-digit numbers, which means they are between 10 and 99. There are not very many cube numbers between 10 and 99, so start by writing them down and then see how they might fit into the grid.</p>
 </div></div><h2>3. Maryam’s inspiration</h2>
-<img src="/images/challenges/1/maryam-mirzakhani.png" style="float: left; margin-right: 1rem"/>
-You might be surprised to know that there is no Nobel Prize for maths. However, there is an even bigger prize for mathematicians, which is called the Fields Medal. It is only given every 4 years, so it is very rare and precious.
+<img src="/images/challenges/1/maryam-mirzakhani.png" class="img-right"/>
+<p>You might be surprised to know that there is no Nobel Prize for maths. However, there is an even bigger prize for mathematicians, which is called the Fields Medal. It is only given every 4 years, so it is very rare and precious.</p>
 <p>In 2014, Maryam Mirzakhani became the first woman to win a Fields Medal. She was born in Iran and now works in America, and you can find out about life and work in the short video below.</p>
 <p>Not surprisingly, Maryam talks about some incredibly complex maths, so don’t worry if you find it confusing. In fact, if you think you understand what Maryam is describing, then you probably don’t. Watch it carefully and answer the question below.</p>
 <p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/4GhbMhQLQ_g?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
@@ -99,14 +101,14 @@ You might be surprised to know that there is no Nobel Prize for maths. However, 
 <div class="choice radio">
   <div v-on:click="setAnswer('p_3_1', 'a')" v-bind:class="{active: answers.p_3_1 == 'a'}">(a) Chess</div>
   <div v-on:click="setAnswer('p_3_1', 'b')" v-bind:class="{active: answers.p_3_1 == 'b'}">(b) Darts</div>
-  <div v-on:click="setAnswer('p_3_1', 'c')" v-bind:class="{active: answers.p_3_1 == 'c'}">(c) Billiards</div>
+  <div v-on:click="setAnswer('p_3_1', 'c')" v-bind:class="{active: answers.p_3_1 == 'c'}" class="correct">(c) Billiards</div>
   <div v-on:click="setAnswer('p_3_1', 'd')" v-bind:class="{active: answers.p_3_1 == 'd'}">(d) Table tennis</div>
 </div>
-<div v-if="showAnswers" style="color:#FF0000" strong>
-  The correct answer is (c).
+<div class="solution">
+  <p>Maryam talks about a problem involving the path of a ball bouncing around a billiard table.</p>
 </div>
 </div>
-<img src="/images/challenges/1/gauss.png" style="float: right; margin-left: 1rem"/>
+<img src="/images/challenges/1/gauss.png" class="img-right"/>
 <p>Maryam has said that she first became fired up about mathematics when her big brother told her a story about the great mathematician Carl Friedrich Gauss. When Gauss was a schoolboy, his teacher tried to keep the class busy by asking them to add up all the numbers from 1 to 100. I suspect that he wanted to nip out for a 15-minute nap.</p>
 <p>However, before the teacher had even left the room, Gauss’s hand shot up and he announced that the answer was 5,050.</p>
 <p>Gauss was right, but how did he add up the first 100 numbers in just a few seconds?</p>
@@ -139,14 +141,15 @@ You might be surprised to know that there is no Nobel Prize for maths. However, 
 <div class="marks">1 mark</div>
 <p><strong>3.2 Add up all the numbers from 1 to 50</strong></p>
 <p><input type="number" placeholder="???" v-model="answers.p_3_2"></input></p>
-<div v-if="showAnswers" style="color:#FF0000" strong>
-  The correct answer is 1,275.
+<div class="solution">
+  <p>The correct answer is 1,275.</p>
 </div>
 <div class="marks">1 mark</div>
 <p><strong>3.3 Add up all the numbers from 1 to 1,000</strong></p>
 <p><input type="number" placeholder="???" v-model="answers.p_3_3"></input></p>
-<div v-if="showAnswers" style="color:#FF0000" strong>
-  The correct answer is 500,500.
+<div class="solution">
+  <p>The correct answer is 500,500.</p>
+  <p>If you got either of these questions wrong, then take a look at <a href="https://betterexplained.com/articles/techniques-for-adding-the-numbers-1-to-100/" target="_blank">this website</a>, which goes into more detail about ways of adding the numbers from 1 to 100, and is worth looking at.</p>
 </div>
 </div>
 <h2>4. Domino toppling</h2>
@@ -156,13 +159,10 @@ You might be surprised to know that there is no Nobel Prize for maths. However, 
 <div class="marks">1 mark</div>
 <p><strong>4.1 Starting with 5mm tall domino, how many dominoes would you need to knock down the Empire State Building?</strong></p>
 <div class="choice radio">
-  <div v-on:click="setAnswer('p_4_1', 'a')" v-bind:class="{active: answers.p_4_1 == 'a'}">(a) 30</div>
+  <div v-on:click="setAnswer('p_4_1', 'a')" v-bind:class="{active: answers.p_4_1 == 'a'}" class="correct">(a) 30</div>
   <div v-on:click="setAnswer('p_4_1', 'b')" v-bind:class="{active: answers.p_4_1 == 'b'}">(b) 100</div>
   <div v-on:click="setAnswer('p_4_1', 'c')" v-bind:class="{active: answers.p_4_1 == 'c'}">(c) 30,000</div>
   <div v-on:click="setAnswer('p_4_1', 'd')" v-bind:class="{active: answers.p_4_1 == 'd'}">(d) 100,000,000</div>
-</div>
-<div v-if="showAnswers" style="color:#FF0000" strong>
-  The correct answer is 30.
 </div>
 </div>
 <p>Each domino can knock over a domino that 1.5 times bigger, which does not seem big, but when this happens over and over again then the dominoes get bigger and bigger very quickly. This is known as exponential growth and we will return to this in a future Parallelogram.
@@ -173,12 +173,15 @@ In the meantime, here is an even more extraordinary example of domino toppling w
 <div class="marks">1 mark</div>
 <p><strong>5.1 Which of these three statements are true?</strong></p>
 <div class="choice checkbox">
-  <div v-on:click="setAnswer('p_5_1a', !answers.p_5_1a)" v-bind:class="{active: answers.p_5_1a}">(i) Doubling a positive number always makes it larger.</div>
+  <div v-on:click="setAnswer('p_5_1a', !answers.p_5_1a)" v-bind:class="{active: answers.p_5_1a}" class="correct">(i) Doubling a positive number always makes it larger.</div>
   <div v-on:click="setAnswer('p_5_1b', !answers.p_5_1b)" v-bind:class="{active: answers.p_5_1b}">(ii) Squaring a positive number always makes it larger.</div>
   <div v-on:click="setAnswer('p_5_1c', !answers.p_5_1c)" v-bind:class="{active: answers.p_5_1c}">(iii) Taking the positive square root of a positive number always makes it smaller.</div>
 </div>
-<div v-if="showAnswers" style="color:#FF0000" strong>
-  The correct answer is just (i).
+<div class="solution">
+  <p>The correct answer is just (i).</p>
+  <p>Statement (i) is true since 2x > x, if x > 0.<br/>
+  Statement (ii) is not true. For example, (½)<sup>2</sup> = ¼, which is not larger than ½.<br/>
+  Statement (iii) is also not true. For example, √¼ = ½, which is not smaller than ¼.</p>
 </div>
 </div>
 <h2><strong>6. Weird optical illusions</strong></h2>
@@ -189,12 +192,12 @@ Sometimes the geometry that you study at school might seem ordinary – what cou
 <div class="marks">1 mark</div>
 <p><strong>6.1 Professor Sugihara’s work could help:</strong></p>
 <div class="choice">
-  <div v-on:click="setAnswer('p_6_1', 'a')" v-bind:class="{active: answers.p_6_1 == 'a'}">(a) Drivers</div>
+  <div v-on:click="setAnswer('p_6_1', 'a')" v-bind:class="{active: answers.p_6_1 == 'a'}" class="correct">(a) Drivers</div>
   <div v-on:click="setAnswer('p_6_1', 'b')" v-bind:class="{active: answers.p_6_1 == 'b'}">(b) Architects</div>
   <div v-on:click="setAnswer('p_6_1', 'c')" v-bind:class="{active: answers.p_6_1 == 'c'}">(c) Surgeons</div>
 </div>
-<div v-if="showAnswers" style="color:#FF0000" strong>
-  The correct answer is (a).
+<div class="solution">
+  <p>The correct answer is (a), because drivers can make errors if their brains are fooled by an optical illusion caused by the geometry of the road.</p>
 </div>
 </div>
 <h2>Find out more</h2>
@@ -203,11 +206,11 @@ Sometimes the geometry that you study at school might seem ordinary – what cou
 <p><a href="https://betterexplained.com/articles/techniques-for-adding-the-numbers-1-to-100/">This website</a> goes into more detail about ways of adding the numbers from 1 to 100, and is worth looking at.</p>
 <h2>Credits</h2>
 <ul>
-<li>Portrait of Carl Friedrich Gauss by Christian Albrecht Jensen, 1840 (public domain)</li>
+<li>Portrait of Carl Gauss by Christian Albrecht Jensen, 1840 (public domain)</li>
 <li>Image of Maryam Mirzakhani taken from <a href="https://alchetron.com/Maryam-Mirzakhani-257976-W">Alchetron</a></li>
 </ul>
 <p>The problems in this Parallelogram come from a variety of places and we will list them in the fourth and final Parallelogram.</p>
-</div><div id="feedback"><svg style="display: none;"><defs><polygon id="star" points="19.8,2.2,6.6,43.56,39.6,17.16,0,17.16,33,43.56"></polygon></defs></svg><hr><p>Before you can finish your Parallelogram, you need to take 30 seconds to answer a few questions that will tell us what you thought about this week’s challenges.</p><table><tr><td>Too easy</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Too difficult</td></tr><tr><td>Too short</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Too long</td></tr><tr><td>Horrible</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Lots of fun</td></tr><tr><td>Very boring</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Very interesting</td></tr></table></div><div id="submit" v-show="!answers.submitted" data-challenge="1"><button v-on:click="submit">Submit Answers</button></div><p class="completed" v-show="answers.submitted">Well done! your score and the correct answers will appear on our homepage at 7.01pm on Sunday.</p></div></div><footer><a href="http://goodthinkingsociety.org" target="_blank">Good Thinking Society</a>•<a href="/terms-and-conditions">Terms and Conditions</a>•<a href="/contact">Contact</a></footer><script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script><script>firebase.initializeApp({
+</div><div id="feedback" v-if="status == 'open' || status == 'past'"><svg style="display: none;"><defs><polygon id="star" points="19.8,2.2,6.6,43.56,39.6,17.16,0,17.16,33,43.56"></polygon></defs></svg><hr><p>Before you can finish your Parallelogram, you need to take 30 seconds to answer a few questions that will tell us what you thought about this week’s challenges.</p><table><tr><td>Too easy</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Too difficult</td></tr><tr><td>Too short</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Too long</td></tr><tr><td>Horrible</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Lots of fun</td></tr><tr><td>Very boring</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Very interesting</td></tr></table></div><button id="submit" v-on:click="submit" v-if="status == 'open' || status == 'past'" data-challenge="1" data-available="2017-06-30T10:00:00.000Z" data-deadline="2017-07-02T19:00:00.000Z">Submit Answers</button><p class="completed" v-if="status == 'submitted'">Well done! your score and the correct answers will appear in {{countdown}}.</p></div></div><footer><a href="http://goodthinkingsociety.org" target="_blank">Good Thinking Society</a>•<a href="/terms-and-conditions">Terms and Conditions</a>•<a href="/contact">Contact</a></footer><script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script><script>firebase.initializeApp({
   apiKey: "AIzaSyCrQ_PdH-05lcNWETGvGfiwO3MBXk_WeVU",
   authDomain: "parallel-cf800.firebaseapp.com",
   databaseURL: "https://parallel-cf800.firebaseio.com",

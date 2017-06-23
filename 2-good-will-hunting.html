@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Parallel Project</title><meta name="description" content="A project to email weekly maths problems and challenges to students."><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="msapplication-tap-highlight" content="no"><link rel="manifest" href="/manifest.json"><link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet"><link href="/styles.css?v3" rel="stylesheet"></head><body><a id="logo" href="/" title="Home"></a><div id="body" v-bind:class="{submitted: answers.submitted}"><div class="login" v-if="!user"><a class="target" v-on:click="login.toggleDropdown">Login</a><form id="login" v-bind:class="{active: login.showDropdown}" v-on:submit="login.submit"><div class="error" v-show="login.error">{{login.error}}</div><input placeholder="Email" required type="email" v-model="login.email" autocomplete="email"><input placeholder="Password" required type="password" v-model="login.password" autocomplete="current-password"><button type="submit">Login</button><p><a href="#">Reset password</a></p></form></div><div class="login" v-if="user"><div class="target">{{user.first}} (<a v-on:click="logout">Logout</a>)</div></div><nav v-if="user"><a href="/" style="background-image: url('/nav/0.png');" title="Home"></a><a href="/01-maryam-jokey-toppling-bloodhound" style="background-image: url('/nav/1.png');" title="Challenge 1: Maths Jokes"></a><a href="/2-good-will-hunting" style="background-image: url('/nav/2.png');" title="Challenge 2: Good Will Hunting"></a><a href="/3-summaze" style="background-image: url('/nav/3.png');" title="Challenge 3: Summaze"></a><a href="/4-graphs-and-networks" style="background-image: url('/nav/4.png');" title="Challenge 4: Graphs and Networks"></a></nav><div class="container"><div><h1>Parallelogram #2</h1>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Parallel Project</title><meta name="description" content="A project to email weekly maths problems and challenges to students."><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="msapplication-tap-highlight" content="no"><link rel="manifest" href="/manifest.json"><link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet"><link href="/styles.css?v3" rel="stylesheet"></head><body><a id="logo" href="/" title="Home"></a><div id="body"><div class="login" v-if="!user"><a class="target" v-on:click="login.toggleDropdown">Login</a><form id="login" v-bind:class="{active: login.showDropdown}" v-on:submit="login.submit"><div class="error" v-show="login.error">{{login.error}}</div><input placeholder="Email" required type="email" v-model="login.email" autocomplete="email"><input placeholder="Password" required type="password" v-model="login.password" autocomplete="current-password"><button type="submit">Login</button><p><a href="#">Reset password</a></p></form></div><div class="login" v-if="user"><div class="target">{{user.first}} (<a v-on:click="logout">Logout</a>)</div></div><nav v-if="user"><a href="/" style="background-image: url('/nav/0.png');" title="Home"></a><a href="/1-maryam-jokey-toppling-bloodhound" style="background-image: url('/nav/1.png');" title="Challenge 1: Maths Jokes"></a><a href="/2-good-will-hunting" style="background-image: url('/nav/2.png');" title="Challenge 2: Good Will Hunting"></a><a href="/3-summaze" style="background-image: url('/nav/3.png');" title="Challenge 3: Summaze"></a><a href="/4-graphs-and-networks" style="background-image: url('/nav/4.png');" title="Challenge 4: Graphs and Networks"></a></nav><div class="container" v-bind:class="status"><div class="status" v-if="status == 'locked'">This parallelogram is locked and will open in {{countdown}}.</div><div class="status" v-if="status == 'open'">You have {{countdown}} left to submit your answers.</div><div class="status" v-if="status == 'submitted'">You've already submitted your answersand can no longer make changes.<br>The solutions and your score will be shown in {{countdown}}.</div><div class="status" v-if="status == 'revealed'">Your score is [TODO].<br>Your answers and the correct solutions are shown below.</div><div class="status" v-if="status == 'past'">This parallelogram is now closed. You can still have a look at the questions, and submit answers.</div><div><h1>Parallelogram #2</h1>
 <p>Welcome to the second of four weekly Parallelograms, a collection of mathematical challenges designed to stretch your brain and make your neurons more squiggly. You can start and stop whenever you like, but you will need to complete all the challenges by 7pm on Sunday. Then, return to the site one minute later at 7.01pm and you will find your score and a sheet with answers and explanations. This week’s Parallelogram challenge is in five parts. Be prepared to encounter all sorts of weird ideas.</p>
 <ol>
 <li>The Good Will Hunting Problem</li>
@@ -38,10 +38,14 @@
 <p><strong>1.1 For 6 dots there are only two irreducible trees. Which of these are they?</strong></p>
 <div class="choice checkbox c3">
   <div v-on:click="setAnswer('p_1_1a', !answers.p_1_1a)" v-bind:class="{active: answers.p_1_1a}"><img src="/images/challenges/2/graph-4a.png"/></div>
-  <div v-on:click="setAnswer('p_1_1b', !answers.p_1_1b)" v-bind:class="{active: answers.p_1_1b}"><img src="/images/challenges/2/graph-4b.png"/></div>
-  <div v-on:click="setAnswer('p_1_1c', !answers.p_1_1c)" v-bind:class="{active: answers.p_1_1c}"><img src="/images/challenges/2/graph-4c.png"/></div>
+  <div v-on:click="setAnswer('p_1_1b', !answers.p_1_1b)" v-bind:class="{active: answers.p_1_1b}" class="correct"><img src="/images/challenges/2/graph-4b.png"/></div>
+  <div v-on:click="setAnswer('p_1_1c', !answers.p_1_1c)" v-bind:class="{active: answers.p_1_1c}" class="correct"><img src="/images/challenges/2/graph-4c.png"/></div>
   <div v-on:click="setAnswer('p_1_1d', !answers.p_1_1d)" v-bind:class="{active: answers.p_1_1d}"><img src="/images/challenges/2/graph-4d.png"/></div>
   <div v-on:click="setAnswer('p_1_1e', !answers.p_1_1e)" v-bind:class="{active: answers.p_1_1e}"><img src="/images/challenges/2/graph-4e.png"/></div>
+</div>
+<div class="solution">
+  <p>The correct answers are (b) and (c).</p>
+  <p>The other trees do not qualify because (e) has dots that are connected to exactly two other lines, and both (a) and (d) have loops.</p>
 </div>
 </div>
 <p>Hopefully, you are now getting the idea, but before we get to the full Good Will Hunting problem, here are three warm ups.</p>
@@ -51,10 +55,15 @@
 <p><strong>1.2</strong> Draw all homeomorphically irreducible trees of with 7 dots. How many did you find?</p>
 <div class="choice radio c5">
   <div v-on:click="setAnswer('p_1_2', 'a')" v-bind:class="{active: answers.p_1_2 == 'a'}">1</div>
-  <div v-on:click="setAnswer('p_1_2', 'b')" v-bind:class="{active: answers.p_1_2 == 'b'}">2</div>
+  <div v-on:click="setAnswer('p_1_2', 'b')" v-bind:class="{active: answers.p_1_2 == 'b'}" class="correct">2</div>
   <div v-on:click="setAnswer('p_1_2', 'c')" v-bind:class="{active: answers.p_1_2 == 'c'}">3</div>
   <div v-on:click="setAnswer('p_1_2', 'd')" v-bind:class="{active: answers.p_1_2 == 'd'}">4</div>
   <div v-on:click="setAnswer('p_1_2', 'e')" v-bind:class="{active: answers.p_1_2 == 'e'}">5</div>
+</div>
+<div class="solution">
+  <p>The correct answer is 2, because any other diagrams either have loops or dots connected to exactly two other lines.</p>
+  <p>Here are the two acceptable trees. Your two trees might look different, but if there are essentially the same, then you are beginning to grasp the maths of trees. One tree has 1 dot with 4 lines, 1 dot with 3 lines and 5 dots with 1 line. The other tree has 1 dot with 6 lines and 6 dots with 1 line.</p>
+  <p class="text-center"><img src="/images/challenges/2/graph-7-dot-solutions.png"/></p>
 </div>
 </div>
 <div class="problem">
@@ -62,10 +71,13 @@
 <p><strong>1.3</strong> For 8 dots, there are 4 distinct trees. Here are 5 trees, so two of them must be essentially the same. Which tree can be twisted and reshaped into another tree? Which tree should be removed? Obviously, there are two possible answers, because you could remove either member of the pair.</p>
 <div class="choice checkbox c3">
   <div v-on:click="setAnswer('p_1_1a', !answers.p_1_1a)" v-bind:class="{active: answers.p_1_1a}"><img src="/images/challenges/2/graph-5a.png"/></div>
-  <div v-on:click="setAnswer('p_1_1b', !answers.p_1_1b)" v-bind:class="{active: answers.p_1_1b}"><img src="/images/challenges/2/graph-5b.png"/></div>
-  <div v-on:click="setAnswer('p_1_1c', !answers.p_1_1c)" v-bind:class="{active: answers.p_1_1c}"><img src="/images/challenges/2/graph-5c.png"/></div>
+  <div v-on:click="setAnswer('p_1_1b', !answers.p_1_1b)" v-bind:class="{active: answers.p_1_1b}" class="correct"><img src="/images/challenges/2/graph-5b.png"/></div>
+  <div v-on:click="setAnswer('p_1_1c', !answers.p_1_1c)" v-bind:class="{active: answers.p_1_1c}" class="correct"><img src="/images/challenges/2/graph-5c.png"/></div>
   <div v-on:click="setAnswer('p_1_1d', !answers.p_1_1d)" v-bind:class="{active: answers.p_1_1d}"><img src="/images/challenges/2/graph-5d.png"/></div>
   <div v-on:click="setAnswer('p_1_1e', !answers.p_1_1e)" v-bind:class="{active: answers.p_1_1e}"><img src="/images/challenges/2/graph-5e.png"/></div>
+</div>
+<div class="solution">
+  <p>The correct answer is (b) or (c). Because both trees have 1 dot connected to 5 lines, 1 dot connected to 3 line and 6 dots connected to 1 line.</p>
 </div>
 </div>
 <div class="problem">
@@ -75,9 +87,12 @@
   <div v-on:click="setAnswer('p_1_4a', !answers.p_1_4a)" v-bind:class="{active: answers.p_1_4a}"><img src="/images/challenges/2/graph-9a.png"/></div>
   <div v-on:click="setAnswer('p_1_4b', !answers.p_1_4b)" v-bind:class="{active: answers.p_1_4b}"><img src="/images/challenges/2/graph-9b.png"/></div>
   <div v-on:click="setAnswer('p_1_4c', !answers.p_1_4c)" v-bind:class="{active: answers.p_1_4c}"><img src="/images/challenges/2/graph-9c.png"/></div>
-  <div v-on:click="setAnswer('p_1_4d', !answers.p_1_4d)" v-bind:class="{active: answers.p_1_4d}"><img src="/images/challenges/2/graph-9d.png"/></div>
-  <div v-on:click="setAnswer('p_1_4e', !answers.p_1_4e)" v-bind:class="{active: answers.p_1_4e}"><img src="/images/challenges/2/graph-9e.png"/></div>
+  <div v-on:click="setAnswer('p_1_4d', !answers.p_1_4d)" v-bind:class="{active: answers.p_1_4d}" class="correct"><img src="/images/challenges/2/graph-9d.png"/></div>
+  <div v-on:click="setAnswer('p_1_4e', !answers.p_1_4e)" v-bind:class="{active: answers.p_1_4e}" class="correct"><img src="/images/challenges/2/graph-9e.png"/></div>
   <div v-on:click="setAnswer('p_1_4f', !answers.p_1_4f)" v-bind:class="{active: answers.p_1_4f}"><img src="/images/challenges/2/graph-9f.png"/></div>
+</div>
+<div class="solution">
+  <p>The correct answer is (d) or (e), because both trees have 1 dot connected to 4 lines, 2 dots connected to 3 lines and 6 dots connected to 1 line.</p>
 </div>
 </div>
 <p>Now you are ready for the full Will Hunting problem.</p>
@@ -86,6 +101,22 @@
 <p><strong>1.5.</strong> Draw all homeomorphically irreducible trees of with 10 dots. How many did you find?</p>
 <p>Take your time. Check you haven’t missed any trees. Check that you have not drawn the same tree twice. The correct answer is between 5 and 14.</p>
 <input type="number" min="5" max="14" data-id="s1-q7"/>  
+<div class="solution">
+  <p>The correct answer is 10 trees. You would have scored 2 marks if you answered 9 or 11, and 1 mark if you answered 8 or 12.</p>
+  <p>Here are the 10 allowable trees:</p>
+  <p class="text-center">
+    <img src="/images/challenges/2/graph-10a.png" style="display: inline-block; margin: 10px;"/>
+    <img src="/images/challenges/2/graph-10b.png" style="display: inline-block; margin: 10px;"/>
+    <img src="/images/challenges/2/graph-10c.png" style="display: inline-block; margin: 10px;"/>
+    <img src="/images/challenges/2/graph-10d.png" style="display: inline-block; margin: 10px;"/>
+    <img src="/images/challenges/2/graph-10e.png" style="display: inline-block; margin: 10px;"/>
+    <img src="/images/challenges/2/graph-10f.png" style="display: inline-block; margin: 10px;"/>
+    <img src="/images/challenges/2/graph-10g.png" style="display: inline-block; margin: 10px;"/>
+    <img src="/images/challenges/2/graph-10h.png" style="display: inline-block; margin: 10px;"/>
+    <img src="/images/challenges/2/graph-10i.png" style="display: inline-block; margin: 10px;"/>
+    <img src="/images/challenges/2/graph-10j.png" style="display: inline-block; margin: 10px;"/>
+  </p>
+</div>
 </div>
 <p>The Good Will Hunting problem is not incredibly difficult, despite what the
 film implies. However, you have just been learning some maths that you would
@@ -129,6 +160,9 @@ removed, and a still from the movie.</p>
   <div v-on:click="setAnswer('p_2_1', 'd')" v-bind:class="{active: answers.p_2_1 == 'd'}">(d) Invisible Chalk</div>
   <div v-on:click="setAnswer('p_2_1', 'e')" v-bind:class="{active: answers.p_2_1 == 'e'}">(e) The Forgotten Mathematicians</div>
 </div>
+<div class="solution">
+  <p>The correct answer is (b). No reason that you should have known this, but you could have googled it.</p>
+</div>
 </div>
 <h2>3. The Councillor Problem</h2>
 <p>A local councillor is knocking on doors. He is carrying out a survey, because
@@ -152,6 +186,9 @@ what their ages are so he asks for a final clue, and the mum agrees.</p>
 <div class="marks">4 marks</div>
 <p><strong>3.1.</strong> How old is the oldest child?</p>
 <input type="number" data-id="s3-q1"/>  
+<div class="solution">
+  <p>The correct answer is 9. To understand why the answer is 9, please check out the hints below.</p>
+</div>
 </div>
 <p>If you can work out the answer then go for it. If you are a bit stuck, then … keep trying. I promise
 that you are smart enough to work out the correct ages of the children, and therefore the age of the
@@ -190,7 +227,7 @@ Once you have narrowed it down to a pair of possibilities, then take a look at f
 Only one of these sets of ages has an oldest child. So the answer is obvious.</p>
 </div></div><h2>4. When not knowing mathematics can cost you $15,000</h2>
 <p>This clip from the TV quiz show <em>Who Wants to be a Millionaire?</em> shows just one reason why it’s a good idea to be a confident mathematician.</p>
-<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/BbX44YSsQ2I" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="//www.youtube.com/embed/BbX44YSsQ2I?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
 <h2>5. Junior Maths Challenge question</h2>
 <div class="problem">
 <div class="marks">1 mark</div>
@@ -202,6 +239,11 @@ Only one of these sets of ages has an oldest child. So the answer is obvious.</p
   <div v-on:click="setAnswer('p_5_1', 'c')" v-bind:class="{active: answers.p_5_1 == 'c'}">(c) 53</div>
   <div v-on:click="setAnswer('p_5_1', 'd')" v-bind:class="{active: answers.p_5_1 == 'd'}">(d) 57</div>
   <div v-on:click="setAnswer('p_5_1', 'e')" v-bind:class="{active: answers.p_5_1 == 'e'}">(e) 67</div>
+</div>
+<div class="solution">
+  <img src="/images/challenges/2/angle-question-answer.png" width=240 class="img-right"/>
+  <p>Let the angle shown be <em>y</em>°. Because the angles at a point total 360°, we have <em>y</em>&nbsp;+&nbsp;303&nbsp;=&nbsp;360. Therefore <em>y</em>&nbsp;=&nbsp;360&nbsp;−&nbsp;303&nbsp;=&nbsp;57.</p>
+  <p>Because the alternate angles formed by a line which cuts a pair of parallel lines are equal, <em>x</em>&nbsp;=&nbsp;<em>y</em>. Hence <em>x</em>&nbsp;=&nbsp;57.</p>
 </div>
 </div>
 <p>That’s all for this week. Don’t forget to come back at 7.01pm on Sunday to find out your score and to obtain the answer sheet.
@@ -215,7 +257,7 @@ to give you questions that you can do, but rather I am trying to give you questi
 <p>More about NASA blackboard photos <a href="http://rarehistoricalphotos.com/nasa-scientists-board-calculations-1961/">here</a>.</p>
 <h2><strong>Credits</strong></h2>
 <p>The problems in this Parallelogram come from a variety of places and we will list them in the fourth and final Parallelogram.</p>
-</div><div id="feedback"><svg style="display: none;"><defs><polygon id="star" points="19.8,2.2,6.6,43.56,39.6,17.16,0,17.16,33,43.56"></polygon></defs></svg><hr><p>Before you can finish your Parallelogram, you need to take 30 seconds to answer a few questions that will tell us what you thought about this week’s challenges.</p><table><tr><td>Too easy</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Too difficult</td></tr><tr><td>Too short</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Too long</td></tr><tr><td>Horrible</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Lots of fun</td></tr><tr><td>Very boring</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Very interesting</td></tr></table></div><div id="submit" v-show="!answers.submitted" data-challenge="2"><button v-on:click="submit">Submit Answers</button></div><p class="completed" v-show="answers.submitted">Well done! your score and the correct answers will appear on our homepage at 7.01pm on Sunday.</p></div></div><footer><a href="http://goodthinkingsociety.org" target="_blank">Good Thinking Society</a>•<a href="/terms-and-conditions">Terms and Conditions</a>•<a href="/contact">Contact</a></footer><script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script><script>firebase.initializeApp({
+</div><div id="feedback" v-if="status == 'open' || status == 'past'"><svg style="display: none;"><defs><polygon id="star" points="19.8,2.2,6.6,43.56,39.6,17.16,0,17.16,33,43.56"></polygon></defs></svg><hr><p>Before you can finish your Parallelogram, you need to take 30 seconds to answer a few questions that will tell us what you thought about this week’s challenges.</p><table><tr><td>Too easy</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Too difficult</td></tr><tr><td>Too short</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Too long</td></tr><tr><td>Horrible</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Lots of fun</td></tr><tr><td>Very boring</td><td><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg><svg width="40" height="42"><use href="#star"></use></svg></td><td>Very interesting</td></tr></table></div><button id="submit" v-on:click="submit" v-if="status == 'open' || status == 'past'" data-challenge="2">Submit Answers</button><p class="completed" v-if="status == 'submitted'">Well done! your score and the correct answers will appear in {{countdown}}.</p></div></div><footer><a href="http://goodthinkingsociety.org" target="_blank">Good Thinking Society</a>•<a href="/terms-and-conditions">Terms and Conditions</a>•<a href="/contact">Contact</a></footer><script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script><script>firebase.initializeApp({
   apiKey: "AIzaSyCrQ_PdH-05lcNWETGvGfiwO3MBXk_WeVU",
   authDomain: "parallel-cf800.firebaseapp.com",
   databaseURL: "https://parallel-cf800.firebaseio.com",
